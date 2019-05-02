@@ -1,0 +1,3 @@
+Host *.us-west-2.compute.amazonaws.com
+    User ubuntu
+    IdentityFile ~/.ssh/hadoop_rsa
