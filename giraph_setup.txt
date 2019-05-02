@@ -79,7 +79,7 @@ cp: cannot open 'hadoop/share/hadoop/kms/tomcat/conf/tomcat-users.xml' for readi
 	export JAVA_HOME=${JAVA_HOME} with
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 	
-6. Set name node location on each node by updating ~/hadoop/etc/hadoop/core-site.xml. 223B PROJECT: Do this once on the master node, copy the hadoop folder to all other nodes.
+6. Set name node location on each node by updating ~/hadoop/etc/hadoop/core-site.xml. 223B PROJECT: All of the subordinate nodes need to have giraph1 as the hostname, but the master node needs to have localhost.
 	<?xml version="1.0" encoding="UTF-8"?>
 	<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
     <configuration>
