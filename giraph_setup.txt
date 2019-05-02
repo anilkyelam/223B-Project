@@ -15,6 +15,8 @@ Stop all: stop-yarn.sh && stop-dfs.sh
 	Some of the machines have Java 10 installed. The way to configure is install Java 8 and change default version to 8.
 	Java versions can co-exist, so install what is needed and use it for hadoop
 	https://stackoverflow.com/questions/12836666/how-to-remove-open-jdk-completely-in-ubuntu
+	sudo add-apt-repository ppa:openjdk-r/ppa
+	sudo apt-get update
 	sudo apt-get install openjdk-8-jdk
 	To see available versions: 	update-alternatives --display java
 	
