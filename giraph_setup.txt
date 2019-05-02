@@ -15,12 +15,14 @@ Stop all: stop-yarn.sh && stop-dfs.sh
 	Some of the machines have Java 10 installed. The way to configure is install Java 8 and change default version to 8.
 	Java versions can co-exist, so install what is needed and use it for hadoop
 	https://stackoverflow.com/questions/12836666/how-to-remove-open-jdk-completely-in-ubuntu
+	sudo add-apt-repository ppa:openjdk-r/ppa
+	sudo apt-get update
 	sudo apt-get install openjdk-8-jdk
 	To see available versions: 	update-alternatives --display java
 	
 2. Download a stable hadoop version. 
 
-3. Create a common user for hadoop on all machines, and a common group to set as a supergroup.
+3. Create a common user for hadoop on all machines, and a common group to set as a supergroup. 223B PROJECT: Skip this step.
 	Username: hadoop
 	Password: <Ask>
 
@@ -49,6 +51,8 @@ Stop all: stop-yarn.sh && stop-dfs.sh
 	Copy it to all the machines:
 		ssh-copy-id -i $HOME/.ssh/id_rsa.pub hadoop@10.0.0.1
 		ssh-copy-id -i $HOME/.ssh/id_rsa.pub hadoop@10.0.1.1
+	223B PROJECT: Generate the key pair on the master server, then copy the public key to all the servers using scp. 
+	Then add the public key to .ssh/authorized_keys on all the subordinate servers. Also put the public key in authorized_keys in 		the master node. 
 	
 4. Copy unzipped hadoop to home folder of hadoop user on all machines (do it from hadoop user context so it retains permissions)
 
@@ -67,14 +71,15 @@ cp: cannot open 'hadoop/share/hadoop/kms/tomcat/conf/tomcat-users.xml' for readi
 
 	And add the folder to path by adding below line to .profile file (/usr/local/home/hadoop/.profile)
 	PATH=/usr/local/home/hadoop/hadoop/bin:/usr/local/home/hadoop/hadoop/sbin:$PATH
+		223B PROJECT: .profile is in the folder setup_resources
 	
-5. Set JAVA_HOME (on all nodes). Use Java 8 installed in step 1
+5. Set JAVA_HOME (on all nodes). Use Java 8 installed in step 1. 223B PROJECT: Skip this step if you copied the previous hadoop installation, it's already complete.
 	Edit ~/hadoop/etc/hadoop/hadoop-env.sh and replace this line:
 	vim ~/hadoop/etc/hadoop/hadoop-env.sh
 	export JAVA_HOME=${JAVA_HOME} with
 	export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
 	
-6. Set name node location on each node by updating ~/hadoop/etc/hadoop/core-site.xml
+6. Set name node location on each node by updating ~/hadoop/etc/hadoop/core-site.xml. 223B PROJECT: All of the subordinate nodes need to have giraph1 as the hostname, but the master node needs to have localhost.
 	<?xml version="1.0" encoding="UTF-8"?>
 	<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
     <configuration>
@@ -102,7 +107,7 @@ cp: cannot open 'hadoop/share/hadoop/kms/tomcat/conf/tomcat-users.xml' for readi
 		</property>
 	</configuration>
 	
-8. Set YARN as Job scheduler
+8. Set YARN as Job scheduler. 223B PROJECT: Already done.
 	https://www.linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/#set-yarn-as-job-scheduler
 	cd hadoop/etc/hadoop/
 	mv mapred-site.xml.template mapred-site.xml
@@ -167,7 +172,7 @@ cp: cannot open 'hadoop/share/hadoop/kms/tomcat/conf/tomcat-users.xml' for readi
 			<value>false</value>
 	</property>
 	
-	Edit /home/hadoop/hadoop/etc/hadoop/mapred-site.xml and add the following lines: (DONT WORRY ABOUT THIS FOR SPARK + YARN)
+	Edit /home/hadoop/hadoop/etc/hadoop/mapred-site.xml and add the following lines: (DON'T WORRY ABOUT THIS FOR SPARK + YARN)
 	<property>
         <name>yarn.app.mapreduce.am.resource.mb</name>
         <value>10240</value>
