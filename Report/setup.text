@@ -1,0 +1,13 @@
+\section{Introduction}
+\label{sec:intro}
+
+The importance of balanced execution of big data frameworks 
+Why we picked graph processing
+
+Sections:
+\begin{itemize}
+    \item A taxonomy of Graph Processing Frameworks and their computation models
+    \item Detailed description of Apache Giraph
+    \item 
+\end{itemize}
+

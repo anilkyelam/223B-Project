@@ -1,3 +1,9 @@
+# Ignore results folder
+Results/
+results/
+
+# Ignore vscode settings
+.vscode/
 
 # Ignore credential files
 *.pass

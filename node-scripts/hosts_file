@@ -1,0 +1,6 @@
+# AWS Giraph Cluster
+
+0.0.0.0         localhost
+52.11.231.32    giraph1
+34.217.82.191   giraph2
+54.69.224.120   giraph3
