@@ -1,0 +1,25 @@
+\section{Discussion}
+\label{sec:discussion}
+
+Here goes the discussion on what choices we made for our implementation w.r.t 
+all the choices we discussed in the previous section. We will go with global
+algorithm like pagerank, on input graphs with uniform vertex and edge 
+distribution to start with. We will go with synchronous model inspite of some
+performance disadvantages as it makes programming easier and is widely used. 
+Since the kind of paritioning (vertex centric, edge centric or graph centric) 
+should not matter that much for very uniform graphs, we will start with the most 
+popular one i.e., vertex centric model. Choosing uniform graphs should help 
+alleviate the skewed straggler problems affecting the synchronous model as well.
+We will go with static partitioning since page rank keeps all the vertices active
+throughout the run. \\
+
+Then we do a theoretical analysis on the kind of network performance we could 
+get. Given nodes of CPU c, memory m and network n for an input graph g = (v, e)
+what would a perfectly written distributed page rank program with above 
+characteristics give us in terms of network performance? \\
+
+We pick a real-world processing framework (i.e., giraph) with the same
+characteristics and run it. How does it do with our expectations? What 
+optimizations we had to do? What is the unexpected part of it? What overheads
+does it add?
+

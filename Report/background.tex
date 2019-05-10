@@ -10,4 +10,50 @@ point to - such as Pregel\cite{Malewicz:2010:PSL:1807167.1807184}, PowerGraph
 
 
 
+\textbf{Notes from Heidari et al.} \cite{Heidari:2018:SGP:3212709.3199523} Look at the 
+paper for citations of all the statements below. \\
+
+Q. Which algorithm to choose?
+Needs to be global, traversing the whole graph. Examples include page rank and connected
+components, degree distribution. \\
+
+Q. Which programming model? Programming models used in existing frameworks (Section 3) - 
+distributed vs shared memory architecture. While shared mem architectures work well for 
+gigabtes of data (Scalability but at what cost paper), they don't scale to terabytes. 
+There's also GPU and FPGA based acceleration proposed in some works, but we want to 
+restrict ourselves to frameworks that run on commodity clusters. \\
+
+Q. Which Programming abstraction?: 
+1. Vertex Centric: how it works and the shortcomings. Discuss some of the example frameworks.
+2. Edge centric: how it works and the shortcomings. Discuss some of the example frameworks.
+3. Component centric: how it works and the shortcomings. Discuss some of the example frameworks.
+4. Others: Like MapReduce and other general purpose big-data processing frameworks. \\
+
+Q. What sort of distributed coordination:
+1. Synchronous - using barriers between iterations, makes life easier for programmer but 
+sensitive to stragglers.
+2. Asynchronous - better performance, but much complex to program and ensure error recovery.
+3. Hybrid
+
+Q. Input partitioning:
+1. Static vs Dynamic: Do we reparition graph at runtime depending on algorithm or straggler issues.
+2. Edge cut vs Vertex cut: How do we partition a non-uniform graph? What's best for the algorithm?
+This is one of the key design choices that network performance could affect. Usually frameworks make 
+one of these choices to minimize number of edges or vertices between to nodes to save on network, but
+is there a better way assuming infinite network bandwidth? (Think more about this!). This is something
+we could vary in our experiments.
+
+Q. Others: Disk vs Memory based, fault tolerance with detection or recovery where choices are either
+clear or not important for our purposes.
+
+
+
+
+
+
+
+
+
+
+
 
