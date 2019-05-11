@@ -1,6 +1,9 @@
 # AWS Giraph Cluster
+# NOTE: Populate this file with PRIVATE ips of each machine, not public ones.
 
 0.0.0.0         localhost
-52.11.231.32    giraph1
-34.217.82.191   giraph2
-54.69.224.120   giraph3
+172.31.38.244   giraph1
+172.31.41.77    giraph2
+172.31.45.169   giraph3
+172.31.38.53    giraph4
+

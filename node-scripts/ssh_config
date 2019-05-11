@@ -1,0 +1,7 @@
+Host *.compute.amazonaws.com 
+    User ubuntu
+    IdentityFile ~/.ssh/giraph-cluster.pem
+
+Host giraph* localhost 0.0.0.0
+    User ubuntu
+    IdentityFile ~/.ssh/giraph-cluster.pem

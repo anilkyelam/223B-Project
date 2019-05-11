@@ -15,7 +15,7 @@ from scp import SCPClient
 
 
 # Experimental Setup constants
-hdfs_nodes = ["giraph1", "giraph2", "giraph3"]
+hdfs_nodes = ["giraph1", "giraph2", "giraph3", "giraph4"]
 designated_giraph_driver_node = "giraph1"
 designated_hdfs_master_node = "giraph1"
 padding_in_secs = 5
@@ -321,7 +321,7 @@ def copy_src_files():
 # Set up environment for experiments
 def setup_env():
     set_up_on_each_node()
-    start_hdfs_yarn_cluster()
+    # start_hdfs_yarn_cluster()
 
 
 # Run experiments
