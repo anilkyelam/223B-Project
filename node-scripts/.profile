@@ -26,4 +26,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Adding hadoop and giraph to path
 PATH=/home/ubuntu/hadoop/bin:/home/ubuntu/hadoop/sbin:$PATH
+PATH=/home/ubuntu/giraph/bin:$PATH
+
+# Setting JAVA_HOME to build giraph
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+# Setting GIRAPH_HOME so that ..
+export GIRAPH_HOME=/home/ubuntu/giraph
+

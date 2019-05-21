@@ -48,7 +48,7 @@ start_power_readings_file = 'start_power_readings.sh'
 stop_power_readings_file = 'stop_power_readings.sh'
 cleanup_after_experiment_file = 'cleanup_after_experiment.sh'
 run_giraph_job_file = 'run_giraph_job.sh'
-log_verbose = False
+log_verbose = True
 
 
 # Creates SSH client from ssh config, using paramiko lib.
@@ -196,7 +196,7 @@ def set_network_rate_limit(ssh_client, rate_limit_mbps):
     tc_qdisc_set_tbf_rate_limit = 'tc qdisc add dev eth0 root tbf rate {0}mbit burst 1mbit latency 10ms'
     ssh_execute_command(ssh_client, tc_qdisc_set_tbf_rate_limit.format(rate_limit_mbps), sudo=True)
 
-    # Check if rate limiting is properly set.
+    # Check if rate limiting is properly set.ec2-54-187-93-140.us-west-2.compute.amazonaws.com
     tc_qdisc_show_command = 'tc qdisc show  dev eth0'
     output = ssh_execute_command(ssh_client, tc_qdisc_show_command)
     token_rate_text = "rate {0}Mbit".format(rate_limit_mbps) if rate_limit_mbps % 1000 != 0 \
@@ -321,15 +321,15 @@ def copy_src_files():
 # Set up environment for experiments
 def setup_env():
     set_up_on_each_node()
-    # start_hdfs_yarn_cluster()
+    start_hdfs_yarn_cluster()
 
 
 # Run experiments
 def run(exp_run_desc):
     giraph_class_name = "SimplePageRankComputation"
 
-    input_graph_files = [ "darwini-10b-edges" ] # "uk-2007-05.graph-txt", "twitter.graph-txt", "darwini-2b-edges", "darwini-5b-edges" ]
-    link_bandwidth_mbps = [500]   # [200, 500, 1000, 2000, 3000, 5000, 8000, 10000]
+    input_graph_files = [ "darwini-10m-edges" ] # "uk-2007-05.graph-txt", "twitter.graph-txt", "darwini-2b-edges", "darwini-5b-edges" ]
+    link_bandwidth_mbps = [1000]   # [200, 500, 1000, 2000, 3000, 5000, 8000, 10000]
     iterations = range(1, 2)
     cache_hdfs_input = False
 

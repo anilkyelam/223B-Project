@@ -235,15 +235,20 @@ http://giraph.apache.org/quick_start.html
 1. Make sure you can run general map-reduce jobs, as that is what Giraph is built on.
 
 2. Clone Giraph repo from GitHub and compile it for YARN and target Hadoop version
-sudo git clone https://github.com/apache/giraph.git
+	sudo git clone https://github.com/apache/giraph.git
   git clone https://github.com/apache/giraph.git
   cd giraph/
   export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-  For PURE YARN: 
+  (Due to some java version mismatch while running giraph on hadoop, we have to build giraph using Java 11 version, not the default 8 version.
+  To update default java, use this command: sudo update-alternatives --config java)
+
+  For PURE YARN (we don't use pure yarn, see below): 
   	mvn -Phadoop_yarn -DskipTests -Dhadoop.version=2.8.5 clean install -Dcheckstyle.skip
-  	(Needed to do a little hack of removing an option from <munge.symbols> in pom.xml for YARN, based on the below link to get compile to work: 
-  	http://mail-archives.apache.org/mod_mbox/giraph-user/201501.mbox/%3C54B17196.4040107@hiro-tan.org%3E)
-  For MapReduce on YARN (we use this): 
+  	(1. Needed to do a little hack of removing an option from <munge.symbols> in pom.xml for YARN, based on the below link to get compile to work: 
+  		http://mail-archives.apache.org/mod_mbox/giraph-user/201501.mbox/%3C54B17196.4040107@hiro-tan.org%3E
+	2. Maven version was really important. Use only 3.5.2
+		apt-get install maven=3.5.2)
+  For MapReduce on YARN (we use this now): 
   	mvn -Phadoop_2 clean install -DskipTests -Dcheckstyle.skip
 
 3. At this point, we'll have a Giraph jar file custom built for Hadoop version, and can be executed using "hadoop jar" over MR.
