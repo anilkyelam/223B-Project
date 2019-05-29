@@ -1,11 +1,6 @@
-\section{Results}
-\label{sec:eval}
 
-\subsection{Input Graph Characterisitcs}
-Detailed description of characteristics of the input graphs that we picked, 
-such as its vertex degree distribution, and what we expect for this particular input.
 
-\subsection{Setting up Giraph}
+Setting up Giraph section in Report:
 1. Look at all the settings file and decribe important settings 
 2. JNI error due to Java version mismatch
 3. Lot of effort spent in adjusting getting the resource limits right
@@ -16,4 +11,11 @@ such as its vertex degree distribution, and what we expect for this particular i
     - 8 hours from getting giraph built to getting the first job running without excepts
 4. 
 
-\subsection{Effect of different partition schemes}
+
+
+======== Extending disk space on AWS volume after increasing size
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recognize-expanded-volume-linux.html
+lsblk
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1
+df -h
