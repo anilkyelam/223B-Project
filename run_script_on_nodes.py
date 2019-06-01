@@ -66,7 +66,7 @@ def run_script():
         # ssh_execute_command(ssh_client, "rm hadoop-ver.tar")
         # ssh_execute_command(ssh_client, "source .profile")
 
-        ssh_execute_command(ssh_client, "sudo update-locale LANG=en_US.UTF-8")
+        ssh_execute_command(ssh_client, "lsblk")
 
 if __name__ == '__main__':
     run_script()

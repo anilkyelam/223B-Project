@@ -1,5 +1,5 @@
 """
-Parses Power, CPU, Memory and other resource usage results and plots them for a single experiment
+Parses CPU, Memory and other resource usage results and plots them for a single experiment
 """
 
 import os

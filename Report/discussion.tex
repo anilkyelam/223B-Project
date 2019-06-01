@@ -18,8 +18,21 @@ get. Given nodes of CPU c, memory m and network n for an input graph g = (v, e)
 what would a perfectly written distributed page rank program with above 
 characteristics give us in terms of network performance? \\
 
-We pick a real-world processing framework (i.e., giraph) with the same
-characteristics and run it. How does it do with our expectations? What 
-optimizations we had to do? What is the unexpected part of it? What overheads
-does it add?
+
+Argue that while all of the design choices we discussed in background and in the 
+first paragraph affects how balanced the resource usage of the run is going to be,
+the thing that seems to matter significantly is how input graph is partitioned. For 
+the purposes of this project, we will look at how partitioning choices will affect
+the resource usage balance of a graph algorithm, particularly pagerank. More details
+on the partitioning is provided in the following section.
+
+
+Instead of implementing distributed page rank from scratch, we decided to pick a one 
+of the many graph processing frameworks available in the wild. We pickled giraph\cite{giraph}
+for these reasons: very much in use, open sourced, matches much of the design choices we 
+picked in the first paragraph, seen many recent optimizations from facebook
+\cite{Ching:2015:OTE:2824032.2824077}, easier to plug in the partitioners, and more?
+Downside: takes too much time and tuning to setup, only allows vertex partitioning, and more?
+
+
 

@@ -328,7 +328,7 @@ def setup_env():
 def run(exp_run_desc):
     giraph_class_name = "SimplePageRankComputation"
 
-    input_graph_files = [ "darwini-10m-edges" ] # "uk-2007-05.graph-txt", "twitter.graph-txt", "darwini-2b-edges", "darwini-5b-edges" ]
+    input_graph_files = [ "uk-2002.graph-txt" ] # "uk-2007-05.graph-txt", "twitter.graph-txt", "darwini-2b-edges", "darwini-5b-edges" ]
     link_bandwidth_mbps = [1000]   # [200, 500, 1000, 2000, 3000, 5000, 8000, 10000]
     iterations = range(1, 2)
     cache_hdfs_input = False
