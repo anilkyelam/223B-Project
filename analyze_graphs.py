@@ -8,12 +8,24 @@ import matplotlib.pyplot as plt
 # input_file = "D:\Scratch\\uk-2007-05\\uk-2007-05.graph-txt"
 # input_style = "law"
 
-input_files_dict = {
+'''input_files_dict = {
     "darwini-50m"               : ["D:\Scratch\\darwini-50m-edges.graph-txt", "darwini", 154549],
     "wordassociation-2011"      : ["D:\Scratch\\wordassociation-2011\\wordassociation-2011.graph-txt", "law"],
     "uk-2007-05"                : ["D:\Scratch\\uk-2007-05\\uk-2007-05.graph-txt", "law"],
     "twitter"                   : ["D:\Scratch\\twitter\\twitter.graph-txt", "law"],
     "enwiki-2015"               : ["D:\Scratch\\enwiki-2015\enwiki-2015.graph-txt", "law"],
+}'''
+
+input_files_dict = {
+    "darwini-50m"               : ["input/darwini-50m-edges.graph-txt", "darwini", 154549],
+    "wordassociation-2011"      : ["input/wordassociation-2011.graph-txt", "law"],
+    "uk-2007-05"                : ["input/uk-2007-05.graph-txt", "law"],
+    "twitter"                   : ["input/twitter.graph-txt", "law"],
+    "enwiki-2015"               : ["input/enwiki-2015.graph-txt", "law"],
+    "cnr2000"                   : ["cnr-2000.graph-txt", "law"],
+    "dblp"                      : ["dblp-2011.graph.txt", "law"],
+    "enron"                     : ["enron.graph-txt", "law"],
+    "hollywood-2011"            : ["hollywood-2011.graph-txt", "law"],
 }
 
 
