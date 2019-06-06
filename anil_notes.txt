@@ -9,7 +9,14 @@ Setting up Giraph section in Report:
     - incomprehensible error messages or errors hidden in remote corners of unknown log files
     - super-fragile, one change in setting causes an error in a completely unrelated place.
     - 8 hours from getting giraph built to getting the first job running without excepts
-4. 
+4. Take some typical graphs and explain for each graph in detail
+5. Explain the partitioners in detail (in both input and giraph sections)
+5. Graph processing is Memory intensive
+    1. Cannot run large graphs due to memory restrictions
+6. Three arguments we hope to present:
+    1. SimpleLongRange performs better/goes against intuition. Small graphs - network overhead is more important
+    2. As number of workers increase, we hoped the time would go down due to increase in resources. Didn't go well.
+    3. Find an appropriate graph with some nice looking resource usage plots
 
 
 
@@ -21,3 +28,532 @@ sudo resize2fs /dev/xvda1
 df -h
 
 - Cite the LAW dataset papers for each of the graphs you used from that website
+
+========= cnr-2000 =========
+Total Vertices: 325557, Edges: 3216152
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.01  1.03
+ 4.00  0.01  1.16
+ 6.00  0.01  2.47
+ 8.00  0.01  2.94
+10.00  0.01  2.85
+12.00  0.01  3.08
+14.00  0.01  3.51
+16.00  0.01  3.98
+18.00  0.01  3.42
+20.00  0.01  4.28
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.13 23.02
+ 4.00  0.24 48.77
+ 6.00  0.34 62.97
+ 8.00  0.32 66.30
+10.00  0.61 77.90
+12.00  0.49 75.02
+14.00  0.71 86.39
+16.00  0.60 81.87
+18.00  0.68 90.49
+20.00  0.66 87.24
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.83
+ 8.00  0.87
+10.00  0.89
+12.00  0.91
+14.00  0.92
+16.00  0.92
+18.00  0.93
+20.00  0.94
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.00
+ 4.00  0.09
+ 6.00  0.03
+ 8.00  0.10
+10.00  0.03
+12.00  0.11
+14.00  0.01
+16.00  0.12
+18.00  0.11
+20.00  0.15
+
+========= dblp-2011 =========
+Total Vertices: 986324, Edges: 6707236
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.52
+ 4.00  0.00  0.81
+ 6.00  0.00  1.11
+ 8.00  0.00  1.22
+10.00  0.01  1.83
+12.00  0.01  2.29
+14.00  0.01  1.90
+16.00  0.01  2.52
+18.00  0.01  2.74
+20.00  0.01  2.60
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.09 16.22
+ 4.00  0.28 58.80
+ 6.00  0.36 83.42
+ 8.00  0.34 86.37
+10.00  0.36 88.45
+12.00  0.36 90.00
+14.00  0.36 91.07
+16.00  0.37 91.89
+18.00  0.37 92.89
+20.00  0.37 92.91
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.55
+ 4.00  0.81
+ 6.00  0.89
+ 8.00  0.92
+10.00  0.94
+12.00  0.95
+14.00  0.96
+16.00  0.97
+18.00  0.97
+20.00  0.98
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.16
+ 4.00  0.24
+ 6.00  0.26
+ 8.00  0.28
+10.00  0.29
+12.00  0.30
+14.00  0.30
+16.00  0.31
+18.00  0.31
+20.00  0.31
+
+
+========= enron =========
+Total Vertices: 69244, Edges: 276143
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.02  3.13
+ 4.00  0.05 13.58
+ 6.00  0.03  7.55
+ 8.00  0.06 14.24
+10.00  0.06 15.02
+12.00  0.07 19.48
+14.00  0.08 27.39
+16.00  0.08 24.99
+18.00  0.08 27.42
+20.00  0.13 37.09
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.22 36.67
+ 4.00  0.33 65.89
+ 6.00  0.47 75.14
+ 8.00  0.64 81.77
+10.00  0.76 85.36
+12.00  0.77 89.14
+14.00  0.75 89.43
+16.00  0.83 91.36
+18.00  1.00 92.71
+20.00  1.07 93.71
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.51
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.95
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.13
+ 4.00  0.25
+ 6.00  0.32
+ 8.00  0.32
+10.00  0.33
+12.00  0.34
+14.00  0.35
+16.00  0.40
+18.00  0.38
+20.00  0.37
+
+
+========= wordassociation-2011 =========
+Total Vertices: 10617, Edges: 72172
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.23
+ 4.00  0.01  2.68
+ 6.00  0.02  5.87
+ 8.00  0.03  8.54
+10.00  0.03  8.61
+12.00  0.03  9.71
+14.00  0.04 13.55
+16.00  0.04 14.68
+18.00  0.03 12.76
+20.00  0.05 22.06
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.01  1.77
+ 4.00  0.02  4.86
+ 6.00  0.03  7.65
+ 8.00  0.04  9.47
+10.00  0.05 17.19
+12.00  0.05 15.86
+14.00  0.07 19.08
+16.00  0.09 30.73
+18.00  0.09 31.34
+20.00  0.08 25.87
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.52
+ 4.00  0.77
+ 6.00  0.86
+ 8.00  0.89
+10.00  0.92
+12.00  0.93
+14.00  0.94
+16.00  0.95
+18.00  0.96
+20.00  0.96
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.29
+ 4.00  0.43
+ 6.00  0.50
+ 8.00  0.52
+10.00  0.55
+12.00  0.56
+14.00  0.57
+16.00  0.57
+18.00  0.58
+20.00  0.59
+
+
+======== enwiki-2015 =========
+Total Vertices: 4853050, Edges: 106314263
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.08
+ 4.00  0.00  0.34
+ 6.00  0.00  0.74
+ 8.00  0.00  0.58
+10.00  0.00  0.80
+12.00  0.00  1.29
+14.00  0.00  0.68
+16.00  0.00  1.04
+18.00  0.00  1.65
+20.00  0.00  1.34
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.11 19.07
+ 4.00  0.11 21.85
+ 6.00  0.13 33.70
+ 8.00  0.13 30.63
+10.00  0.15 40.45
+12.00  0.15 40.72
+14.00  0.19 48.50
+16.00  0.20 50.16
+18.00  0.22 54.19
+20.00  0.22 53.07
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.51
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.95
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.24
+ 4.00  0.37
+ 6.00  0.40
+ 8.00  0.43
+10.00  0.44
+12.00  0.45
+14.00  0.46
+16.00  0.46
+18.00  0.47
+20.00  0.47
+
+
+========= hollywood-2011 =========
+Total Vertices: 2180759, Edges: 228985632
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.01
+ 4.00  0.00  0.51
+ 6.00  0.00  0.71
+ 8.00  0.00  0.80
+10.00  0.00  0.45
+12.00  0.00  1.36
+14.00  0.00  1.10
+16.00  0.00  1.67
+18.00  0.00  1.40
+20.00  0.00  1.29
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.03  6.34
+ 4.00  0.22 45.27
+ 6.00  0.50 83.52
+ 8.00  0.59 97.33
+10.00  0.53 99.67
+12.00  0.66 99.85
+14.00  0.60 99.89
+16.00  0.71 99.94
+18.00  0.70 99.95
+20.00  0.70 99.96
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.91
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.95
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.13
+ 4.00  0.25
+ 6.00  0.24
+ 8.00  0.29
+10.00  0.31
+12.00  0.30
+14.00  0.33
+16.00  0.33
+18.00  0.33
+20.00  0.35
+
+
+========= hollywood-2009 =========
+Total Vertices: 1139905, Edges: 113891327
+
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.18
+ 4.00  0.00  0.30
+ 6.00  0.00  0.43
+ 8.00  0.00  0.72
+10.00  0.00  0.68
+12.00  0.00  0.86
+14.00  0.00  1.19
+16.00  0.00  1.48
+18.00  0.00  1.57
+20.00  0.00  1.21
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.26 41.88
+ 4.00  0.39 64.66
+ 6.00  0.49 72.61
+ 8.00  0.43 74.32
+10.00  0.56 89.49
+12.00  0.61 92.26
+14.00  0.63 94.65
+16.00  0.64 98.77
+18.00  0.78 99.21
+20.00  0.80 99.31
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.83
+ 8.00  0.87
+10.00  0.90
+12.00  0.91
+14.00  0.92
+16.00  0.93
+18.00  0.94
+20.00  0.94
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.11
+ 4.00  0.15
+ 6.00  0.22
+ 8.00  0.21
+10.00  0.24
+12.00  0.25
+14.00  0.25
+16.00  0.27
+18.00  0.26
+20.00  0.27
+
+
+========= ljournal-2008 =========
+Total Vertices: 5363260, Edges: 79023142
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.32
+ 4.00  0.00  0.53
+ 6.00  0.00  0.55
+ 8.00  0.00  0.73
+10.00  0.00  0.81
+12.00  0.00  0.91
+14.00  0.00  0.72
+16.00  0.00  0.90
+18.00  0.00  1.53
+20.00  0.00  1.14
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.13 23.22
+ 4.00  0.27 48.96
+ 6.00  0.30 53.29
+ 8.00  0.36 63.34
+10.00  0.39 67.18
+12.00  0.42 70.64
+14.00  0.44 72.20
+16.00  0.43 73.80
+18.00  0.45 75.99
+20.00  0.47 77.57
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.51
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.94
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.16
+ 4.00  0.25
+ 6.00  0.29
+ 8.00  0.30
+10.00  0.32
+12.00  0.33
+14.00  0.35
+16.00  0.36
+18.00  0.36
+20.00  0.37
+
+
+
+========= uk-2007-05@1000000 ('range', 20) =========
+Total Vertices: 1000000, Edges: 41247159
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.02
+ 4.00  0.00  0.04
+ 6.00  0.00  0.20
+ 8.00  0.00  0.14
+10.00  0.00  0.29
+12.00  0.00  0.37
+14.00  0.00  0.49
+16.00  0.00  0.47
+18.00  0.00  0.49
+20.00  0.00  0.41
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.11 19.98
+ 4.00  0.18 39.80
+ 6.00  0.25 49.50
+ 8.00  0.27 58.22
+10.00  0.31 61.86
+12.00  0.40 77.23
+14.00  0.36 63.35
+16.00  0.42 79.92
+18.00  0.46 80.70
+20.00  0.43 79.30
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.83
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.94
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.04
+ 4.00  0.06
+ 6.00  0.07
+ 8.00  0.17
+10.00  0.08
+12.00  0.11
+14.00  0.18
+16.00  0.19
+18.00  0.11
+20.00  0.19
+
+========= twitter =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 97.01
+Inter-Partition Edges: 861820448
+Inter-Partition Edges Ratio: 0.59
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.75
+ 4.00  0.01  2.04
+ 6.00  0.01  2.17
+ 8.00  0.01  3.44
+10.00  0.01  4.73
+12.00  0.03  9.95
+14.00  0.02  7.31
+16.00  0.02  8.55
+18.00  0.02 10.36
+20.00  0.02  7.01
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.66 79.71
+ 4.00  1.06 90.66
+ 6.00  1.38 94.08
+ 8.00  1.60 95.64
+10.00  1.77 96.59
+12.00  1.84 96.97
+14.00  1.57 96.41
+16.00  1.63 96.51
+18.00  1.72 96.80
+20.00  1.79 97.01
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.95
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.26
+ 4.00  0.42
+ 6.00  0.46
+ 8.00  0.49
+10.00  0.51
+12.00  0.53
+14.00  0.56
+16.00  0.57
+18.00  0.58
+20.00  0.59
+
+========= uk-2002 =========
+Total Vertices: 18520486, Edges: 298113762
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.07
+ 4.00  0.00  0.08
+ 6.00  0.00  0.18
+ 8.00  0.00  0.15
+10.00  0.00  0.24
+12.00  0.00  0.26
+14.00  0.00  0.41
+16.00  0.00  0.30
+18.00  0.00  0.28
+20.00  0.00  0.43
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.08 14.40
+ 4.00  0.12 28.91
+ 6.00  0.12 32.65
+ 8.00  0.13 35.47
+10.00  0.13 36.19
+12.00  0.13 36.74
+14.00  0.13 38.82
+16.00  0.14 44.69
+18.00  0.13 45.52
+20.00  0.14 47.27
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.83
+ 8.00  0.87
+10.00  0.89
+12.00  0.91
+14.00  0.92
+16.00  0.93
+18.00  0.93
+20.00  0.94
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.02
+ 4.00  0.03
+ 6.00  0.04
+ 8.00  0.04
+10.00  0.04
+12.00  0.04
+14.00  0.04
+16.00  0.04
+18.00  0.04
+20.00  0.04
