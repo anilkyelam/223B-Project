@@ -1,0 +1,1739 @@
+Analyzing input graph: wordassociation-2011
+Processed 0.0 million vertices
+========= wordassociation-2011 ('modulo', 2) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 0.23
+Inter-Partition Edges: 37553
+Inter-Partition Edges Ratio: 0.52
+========= wordassociation-2011 ('modulo', 4) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 2.68
+Inter-Partition Edges: 55619
+Inter-Partition Edges Ratio: 0.77
+========= wordassociation-2011 ('modulo', 8) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 8.54
+Inter-Partition Edges: 64489
+Inter-Partition Edges Ratio: 0.89
+========= wordassociation-2011 ('modulo', 16) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 14.68
+Inter-Partition Edges: 68632
+Inter-Partition Edges Ratio: 0.95
+========= wordassociation-2011 ('modulo', 32) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 21.7
+Inter-Partition Edges: 70542
+Inter-Partition Edges Ratio: 0.98
+========= wordassociation-2011 ('modulo', 64) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 38.84
+Inter-Partition Edges: 71421
+Inter-Partition Edges Ratio: 0.99
+========= wordassociation-2011 ('modulo', 128) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 47.76
+Inter-Partition Edges: 71808
+Inter-Partition Edges Ratio: 0.99
+========= wordassociation-2011 ('modulo', 256) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 71.49
+Inter-Partition Edges: 71980
+Inter-Partition Edges Ratio: 1.0
+========= wordassociation-2011 ('modulo', 512) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 82.11
+Inter-Partition Edges: 72065
+Inter-Partition Edges Ratio: 1.0
+========= wordassociation-2011 ('modulo', 1024) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 95.57
+Inter-Partition Edges: 72117
+Inter-Partition Edges Ratio: 1.0
+========= wordassociation-2011 ('range', 2) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 1.77
+Inter-Partition Edges: 21104
+Inter-Partition Edges Ratio: 0.29
+========= wordassociation-2011 ('range', 4) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 4.86
+Inter-Partition Edges: 31361
+Inter-Partition Edges Ratio: 0.43
+========= wordassociation-2011 ('range', 8) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 9.47
+Inter-Partition Edges: 37439
+Inter-Partition Edges Ratio: 0.52
+========= wordassociation-2011 ('range', 16) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 30.73
+Inter-Partition Edges: 41339
+Inter-Partition Edges Ratio: 0.57
+========= wordassociation-2011 ('range', 32) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 44.01
+Inter-Partition Edges: 44018
+Inter-Partition Edges Ratio: 0.61
+========= wordassociation-2011 ('range', 64) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 69.93
+Inter-Partition Edges: 46783
+Inter-Partition Edges Ratio: 0.65
+========= wordassociation-2011 ('range', 128) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 85.21
+Inter-Partition Edges: 50034
+Inter-Partition Edges Ratio: 0.69
+========= wordassociation-2011 ('range', 256) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 95.43
+Inter-Partition Edges: 53372
+Inter-Partition Edges Ratio: 0.74
+========= wordassociation-2011 ('range', 512) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 94.22
+Inter-Partition Edges: 57443
+Inter-Partition Edges Ratio: 0.8
+========= wordassociation-2011 ('range', 1024) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 96.84
+Inter-Partition Edges: 61442
+Inter-Partition Edges Ratio: 0.85
+Analyzing input graph: enwiki-2015
+Processed 0.0 million vertices
+Processed 1.0 million vertices
+Processed 2.0 million vertices
+Processed 3.0 million vertices
+Processed 4.0 million vertices
+========= enwiki-2015 ('modulo', 2) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.08
+Inter-Partition Edges: 53782292
+Inter-Partition Edges Ratio: 0.51
+========= enwiki-2015 ('modulo', 4) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.34
+Inter-Partition Edges: 80370535
+Inter-Partition Edges Ratio: 0.76
+========= enwiki-2015 ('modulo', 8) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.58
+Inter-Partition Edges: 93484365
+Inter-Partition Edges Ratio: 0.88
+========= enwiki-2015 ('modulo', 16) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 1.04
+Inter-Partition Edges: 99965217
+Inter-Partition Edges Ratio: 0.94
+========= enwiki-2015 ('modulo', 32) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 1.27
+Inter-Partition Edges: 103172959
+Inter-Partition Edges Ratio: 0.97
+========= enwiki-2015 ('modulo', 64) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 2.7
+Inter-Partition Edges: 104757132
+Inter-Partition Edges Ratio: 0.99
+========= enwiki-2015 ('modulo', 128) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 4.19
+Inter-Partition Edges: 105536802
+Inter-Partition Edges Ratio: 0.99
+========= enwiki-2015 ('modulo', 256) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 7.47
+Inter-Partition Edges: 105917595
+Inter-Partition Edges Ratio: 1.0
+========= enwiki-2015 ('modulo', 512) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 10.71
+Inter-Partition Edges: 106102219
+Inter-Partition Edges Ratio: 1.0
+========= enwiki-2015 ('modulo', 1024) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 19.26
+Inter-Partition Edges: 106191558
+Inter-Partition Edges Ratio: 1.0
+========= enwiki-2015 ('range', 2) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 19.07
+Inter-Partition Edges: 25178697
+Inter-Partition Edges Ratio: 0.24
+========= enwiki-2015 ('range', 4) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 21.85
+Inter-Partition Edges: 38983758
+Inter-Partition Edges Ratio: 0.37
+========= enwiki-2015 ('range', 8) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 30.63
+Inter-Partition Edges: 45842335
+Inter-Partition Edges Ratio: 0.43
+========= enwiki-2015 ('range', 16) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 50.16
+Inter-Partition Edges: 48996145
+Inter-Partition Edges Ratio: 0.46
+========= enwiki-2015 ('range', 32) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 66.45
+Inter-Partition Edges: 53171154
+Inter-Partition Edges Ratio: 0.5
+========= enwiki-2015 ('range', 64) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 79.89
+Inter-Partition Edges: 55714148
+Inter-Partition Edges Ratio: 0.52
+========= enwiki-2015 ('range', 128) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 90.36
+Inter-Partition Edges: 58446629
+Inter-Partition Edges Ratio: 0.55
+========= enwiki-2015 ('range', 256) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 94.06
+Inter-Partition Edges: 62254921
+Inter-Partition Edges Ratio: 0.59
+========= enwiki-2015 ('range', 512) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 98.08
+Inter-Partition Edges: 66846454
+Inter-Partition Edges Ratio: 0.63
+========= enwiki-2015 ('range', 1024) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 100.0
+Inter-Partition Edges: 72087139
+Inter-Partition Edges Ratio: 0.68
+Analyzing input graph: twitter
+Processed 0.0 million vertices
+Processed 1.0 million vertices
+Processed 2.0 million vertices
+Processed 3.0 million vertices
+Processed 4.0 million vertices
+Processed 5.0 million vertices
+Processed 6.0 million vertices
+Processed 7.0 million vertices
+Processed 8.0 million vertices
+Processed 9.0 million vertices
+Processed 10.0 million vertices
+Processed 11.0 million vertices
+Processed 12.0 million vertices
+Processed 13.0 million vertices
+Processed 14.0 million vertices
+Processed 15.0 million vertices
+Processed 16.0 million vertices
+Processed 17.0 million vertices
+Processed 18.0 million vertices
+Processed 19.0 million vertices
+Processed 20.0 million vertices
+Processed 21.0 million vertices
+Processed 22.0 million vertices
+Processed 23.0 million vertices
+Processed 24.0 million vertices
+Processed 25.0 million vertices
+Processed 26.0 million vertices
+Processed 27.0 million vertices
+Processed 28.0 million vertices
+Processed 29.0 million vertices
+Processed 30.0 million vertices
+Processed 31.0 million vertices
+Processed 32.0 million vertices
+Processed 33.0 million vertices
+Processed 34.0 million vertices
+Processed 35.0 million vertices
+Processed 36.0 million vertices
+Processed 37.0 million vertices
+Processed 38.0 million vertices
+Processed 39.0 million vertices
+Processed 40.0 million vertices
+Processed 41.0 million vertices
+========= twitter ('modulo', 2) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 0.75
+Inter-Partition Edges: 739730100
+Inter-Partition Edges Ratio: 0.5
+========= twitter ('modulo', 4) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 2.04
+Inter-Partition Edges: 1107178936
+Inter-Partition Edges Ratio: 0.75
+========= twitter ('modulo', 8) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 3.44
+Inter-Partition Edges: 1289212670
+Inter-Partition Edges Ratio: 0.88
+========= twitter ('modulo', 16) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 8.55
+Inter-Partition Edges: 1379543853
+Inter-Partition Edges Ratio: 0.94
+========= twitter ('modulo', 32) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 13.46
+Inter-Partition Edges: 1424265321
+Inter-Partition Edges Ratio: 0.97
+========= twitter ('modulo', 64) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 26.63
+Inter-Partition Edges: 1446486249
+Inter-Partition Edges Ratio: 0.99
+========= twitter ('modulo', 128) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 35.89
+Inter-Partition Edges: 1457520701
+Inter-Partition Edges Ratio: 0.99
+========= twitter ('modulo', 256) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 51.34
+Inter-Partition Edges: 1462997339
+Inter-Partition Edges Ratio: 1.0
+========= twitter ('modulo', 512) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 60.02
+Inter-Partition Edges: 1465719291
+Inter-Partition Edges Ratio: 1.0
+========= twitter ('modulo', 1024) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 75.05
+Inter-Partition Edges: 1467063299
+Inter-Partition Edges Ratio: 1.0
+========= twitter ('range', 2) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 79.71
+Inter-Partition Edges: 387780593
+Inter-Partition Edges Ratio: 0.26
+========= twitter ('range', 4) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 90.66
+Inter-Partition Edges: 615592422
+Inter-Partition Edges Ratio: 0.42
+========= twitter ('range', 8) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 95.64
+Inter-Partition Edges: 719230696
+Inter-Partition Edges Ratio: 0.49
+========= twitter ('range', 16) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 96.51
+Inter-Partition Edges: 832728358
+Inter-Partition Edges Ratio: 0.57
+========= twitter ('range', 32) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 98.14
+Inter-Partition Edges: 907383871
+Inter-Partition Edges Ratio: 0.62
+========= twitter ('range', 64) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 99.0
+Inter-Partition Edges: 973049481
+Inter-Partition Edges Ratio: 0.66
+========= twitter ('range', 128) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 99.54
+Inter-Partition Edges: 1000042242
+Inter-Partition Edges Ratio: 0.68
+========= twitter ('range', 256) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 99.78
+Inter-Partition Edges: 1027203413
+Inter-Partition Edges Ratio: 0.7
+========= twitter ('range', 512) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 99.86
+Inter-Partition Edges: 1092599301
+Inter-Partition Edges Ratio: 0.74
+========= twitter ('range', 1024) =========
+Total Vertices: 41652230, Edges: 1468365182
+Normalized edge range: 99.95
+Inter-Partition Edges: 1167978122
+Inter-Partition Edges Ratio: 0.8
+Analyzing input graph: uk-2007-05
+Processed 0.0 million vertices
+Processed 1.0 million vertices
+Processed 2.0 million vertices
+Processed 3.0 million vertices
+Processed 4.0 million vertices
+Processed 5.0 million vertices
+Processed 6.0 million vertices
+Processed 7.0 million vertices
+Processed 8.0 million vertices
+Processed 9.0 million vertices
+Processed 10.0 million vertices
+Processed 11.0 million vertices
+Processed 12.0 million vertices
+Processed 13.0 million vertices
+Processed 14.0 million vertices
+Processed 15.0 million vertices
+Processed 16.0 million vertices
+Processed 17.0 million vertices
+Processed 18.0 million vertices
+Processed 19.0 million vertices
+Processed 20.0 million vertices
+Processed 21.0 million vertices
+Processed 22.0 million vertices
+Processed 23.0 million vertices
+Processed 24.0 million vertices
+Processed 25.0 million vertices
+Processed 26.0 million vertices
+Processed 27.0 million vertices
+Processed 28.0 million vertices
+Processed 29.0 million vertices
+Processed 30.0 million vertices
+Processed 31.0 million vertices
+Processed 32.0 million vertices
+Processed 33.0 million vertices
+Processed 34.0 million vertices
+Processed 35.0 million vertices
+Processed 36.0 million vertices
+Processed 37.0 million vertices
+Processed 38.0 million vertices
+Processed 39.0 million vertices
+Processed 40.0 million vertices
+Processed 41.0 million vertices
+Processed 42.0 million vertices
+Processed 43.0 million vertices
+Traceback (most recent call last):
+  File ".\analyze_graphs.py", line 182, in <module>
+    main()
+  File ".\analyze_graphs.py", line 177, in main
+    all_stats = parse_input_get_stats(input_file, partition_styles_list, partition_counts_list)
+  File ".\analyze_graphs.py", line 123, in parse_input_get_stats
+    line = fp.readline()
+  File "C:\Users\anilkyelam\AppData\Local\Programs\Python\Python37\Lib\encodings\cp1252.py", line 22, in decode
+    def decode(self, input, final=False):
+KeyboardInterrupt
+
+
+
+======== LOGS 2
+Analyzing input graph: cnr-2000
+Processed 0.0 million vertices
+========= cnr-2000 ('modulo', 2) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 1.03
+Inter-Partition Edges: 1617771
+Inter-Partition Edges Ratio: 0.5
+========= cnr-2000 ('modulo', 4) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 1.16
+Inter-Partition Edges: 2404008
+Inter-Partition Edges Ratio: 0.75
+========= cnr-2000 ('modulo', 6) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 2.47
+Inter-Partition Edges: 2660359
+Inter-Partition Edges Ratio: 0.83
+========= cnr-2000 ('modulo', 8) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 2.94
+Inter-Partition Edges: 2787754
+Inter-Partition Edges Ratio: 0.87
+========= cnr-2000 ('modulo', 10) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 2.85
+Inter-Partition Edges: 2861868
+Inter-Partition Edges Ratio: 0.89
+========= cnr-2000 ('modulo', 12) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 3.08
+Inter-Partition Edges: 2911561
+Inter-Partition Edges Ratio: 0.91
+========= cnr-2000 ('modulo', 14) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 3.51
+Inter-Partition Edges: 2946385
+Inter-Partition Edges Ratio: 0.92
+========= cnr-2000 ('modulo', 16) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 3.98
+Inter-Partition Edges: 2972539
+Inter-Partition Edges Ratio: 0.92
+========= cnr-2000 ('modulo', 18) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 3.42
+Inter-Partition Edges: 2991789
+Inter-Partition Edges Ratio: 0.93
+========= cnr-2000 ('modulo', 20) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 4.28
+Inter-Partition Edges: 3008235
+Inter-Partition Edges Ratio: 0.94
+========= cnr-2000 ('range', 2) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 23.02
+Inter-Partition Edges: 15863
+Inter-Partition Edges Ratio: 0.0
+========= cnr-2000 ('range', 4) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 48.77
+Inter-Partition Edges: 285692
+Inter-Partition Edges Ratio: 0.09
+========= cnr-2000 ('range', 6) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 62.97
+Inter-Partition Edges: 91011
+Inter-Partition Edges Ratio: 0.03
+========= cnr-2000 ('range', 8) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 66.3
+Inter-Partition Edges: 307341
+Inter-Partition Edges Ratio: 0.1
+========= cnr-2000 ('range', 10) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 77.9
+Inter-Partition Edges: 102902
+Inter-Partition Edges Ratio: 0.03
+========= cnr-2000 ('range', 12) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 75.02
+Inter-Partition Edges: 357428
+Inter-Partition Edges Ratio: 0.11
+========= cnr-2000 ('range', 14) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 86.39
+Inter-Partition Edges: 35465
+Inter-Partition Edges Ratio: 0.01
+========= cnr-2000 ('range', 16) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 81.87
+Inter-Partition Edges: 396824
+Inter-Partition Edges Ratio: 0.12
+========= cnr-2000 ('range', 18) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 90.49
+Inter-Partition Edges: 338886
+Inter-Partition Edges Ratio: 0.11
+========= cnr-2000 ('range', 20) =========
+Total Vertices: 325557, Edges: 3216152
+Normalized edge range: 87.24
+Inter-Partition Edges: 484763
+Inter-Partition Edges Ratio: 0.15
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.01  1.03
+ 4.00  0.01  1.16
+ 6.00  0.01  2.47
+ 8.00  0.01  2.94
+10.00  0.01  2.85
+12.00  0.01  3.08
+14.00  0.01  3.51
+16.00  0.01  3.98
+18.00  0.01  3.42
+20.00  0.01  4.28
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.13 23.02
+ 4.00  0.24 48.77
+ 6.00  0.34 62.97
+ 8.00  0.32 66.30
+10.00  0.61 77.90
+12.00  0.49 75.02
+14.00  0.71 86.39
+16.00  0.60 81.87
+18.00  0.68 90.49
+20.00  0.66 87.24
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.83
+ 8.00  0.87
+10.00  0.89
+12.00  0.91
+14.00  0.92
+16.00  0.92
+18.00  0.93
+20.00  0.94
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.00
+ 4.00  0.09
+ 6.00  0.03
+ 8.00  0.10
+10.00  0.03
+12.00  0.11
+14.00  0.01
+16.00  0.12
+18.00  0.11
+20.00  0.15
+Analyzing input graph: dblp-2011
+Processed 0.0 million vertices
+========= dblp-2011 ('modulo', 2) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 0.52
+Inter-Partition Edges: 3704536
+Inter-Partition Edges Ratio: 0.55
+========= dblp-2011 ('modulo', 4) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 0.81
+Inter-Partition Edges: 5433322
+Inter-Partition Edges Ratio: 0.81
+========= dblp-2011 ('modulo', 6) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 1.11
+Inter-Partition Edges: 5947784
+Inter-Partition Edges Ratio: 0.89
+========= dblp-2011 ('modulo', 8) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 1.22
+Inter-Partition Edges: 6179956
+Inter-Partition Edges Ratio: 0.92
+========= dblp-2011 ('modulo', 10) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 1.83
+Inter-Partition Edges: 6310660
+Inter-Partition Edges Ratio: 0.94
+========= dblp-2011 ('modulo', 12) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 2.29
+Inter-Partition Edges: 6391928
+Inter-Partition Edges Ratio: 0.95
+========= dblp-2011 ('modulo', 14) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 1.9
+Inter-Partition Edges: 6447314
+Inter-Partition Edges Ratio: 0.96
+========= dblp-2011 ('modulo', 16) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 2.52
+Inter-Partition Edges: 6486516
+Inter-Partition Edges Ratio: 0.97
+========= dblp-2011 ('modulo', 18) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 2.74
+Inter-Partition Edges: 6516492
+Inter-Partition Edges Ratio: 0.97
+========= dblp-2011 ('modulo', 20) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 2.6
+Inter-Partition Edges: 6539894
+Inter-Partition Edges Ratio: 0.98
+========= dblp-2011 ('range', 2) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 16.22
+Inter-Partition Edges: 1077968
+Inter-Partition Edges Ratio: 0.16
+========= dblp-2011 ('range', 4) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 58.8
+Inter-Partition Edges: 1586426
+Inter-Partition Edges Ratio: 0.24
+========= dblp-2011 ('range', 6) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 83.42
+Inter-Partition Edges: 1751088
+Inter-Partition Edges Ratio: 0.26
+========= dblp-2011 ('range', 8) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 86.37
+Inter-Partition Edges: 1885624
+Inter-Partition Edges Ratio: 0.28
+========= dblp-2011 ('range', 10) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 88.45
+Inter-Partition Edges: 1946584
+Inter-Partition Edges Ratio: 0.29
+========= dblp-2011 ('range', 12) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 90.0
+Inter-Partition Edges: 1988702
+Inter-Partition Edges Ratio: 0.3
+========= dblp-2011 ('range', 14) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 91.07
+Inter-Partition Edges: 2022824
+Inter-Partition Edges Ratio: 0.3
+========= dblp-2011 ('range', 16) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 91.89
+Inter-Partition Edges: 2047570
+Inter-Partition Edges Ratio: 0.31
+========= dblp-2011 ('range', 18) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 92.89
+Inter-Partition Edges: 2062664
+Inter-Partition Edges Ratio: 0.31
+========= dblp-2011 ('range', 20) =========
+Total Vertices: 986324, Edges: 6707236
+Normalized edge range: 92.91
+Inter-Partition Edges: 2089340
+Inter-Partition Edges Ratio: 0.31
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.52
+ 4.00  0.00  0.81
+ 6.00  0.00  1.11
+ 8.00  0.00  1.22
+10.00  0.01  1.83
+12.00  0.01  2.29
+14.00  0.01  1.90
+16.00  0.01  2.52
+18.00  0.01  2.74
+20.00  0.01  2.60
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.09 16.22
+ 4.00  0.28 58.80
+ 6.00  0.36 83.42
+ 8.00  0.34 86.37
+10.00  0.36 88.45
+12.00  0.36 90.00
+14.00  0.36 91.07
+16.00  0.37 91.89
+18.00  0.37 92.89
+20.00  0.37 92.91
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.55
+ 4.00  0.81
+ 6.00  0.89
+ 8.00  0.92
+10.00  0.94
+12.00  0.95
+14.00  0.96
+16.00  0.97
+18.00  0.97
+20.00  0.98
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.16
+ 4.00  0.24
+ 6.00  0.26
+ 8.00  0.28
+10.00  0.29
+12.00  0.30
+14.00  0.30
+16.00  0.31
+18.00  0.31
+20.00  0.31
+Analyzing input graph: enron
+Processed 0.0 million vertices
+========= enron ('modulo', 2) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 3.13
+Inter-Partition Edges: 139592
+Inter-Partition Edges Ratio: 0.51
+========= enron ('modulo', 4) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 13.58
+Inter-Partition Edges: 208506
+Inter-Partition Edges Ratio: 0.76
+========= enron ('modulo', 6) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 7.55
+Inter-Partition Edges: 231276
+Inter-Partition Edges Ratio: 0.84
+========= enron ('modulo', 8) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 14.24
+Inter-Partition Edges: 242653
+Inter-Partition Edges Ratio: 0.88
+========= enron ('modulo', 10) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 15.02
+Inter-Partition Edges: 249523
+Inter-Partition Edges Ratio: 0.9
+========= enron ('modulo', 12) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 19.48
+Inter-Partition Edges: 253785
+Inter-Partition Edges Ratio: 0.92
+========= enron ('modulo', 14) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 27.39
+Inter-Partition Edges: 257094
+Inter-Partition Edges Ratio: 0.93
+========= enron ('modulo', 16) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 24.99
+Inter-Partition Edges: 259472
+Inter-Partition Edges Ratio: 0.94
+========= enron ('modulo', 18) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 27.42
+Inter-Partition Edges: 261194
+Inter-Partition Edges Ratio: 0.95
+========= enron ('modulo', 20) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 37.09
+Inter-Partition Edges: 262753
+Inter-Partition Edges Ratio: 0.95
+========= enron ('range', 2) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 36.67
+Inter-Partition Edges: 36588
+Inter-Partition Edges Ratio: 0.13
+========= enron ('range', 4) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 65.89
+Inter-Partition Edges: 69801
+Inter-Partition Edges Ratio: 0.25
+========= enron ('range', 6) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 75.14
+Inter-Partition Edges: 87878
+Inter-Partition Edges Ratio: 0.32
+========= enron ('range', 8) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 81.77
+Inter-Partition Edges: 89436
+Inter-Partition Edges Ratio: 0.32
+========= enron ('range', 10) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 85.36
+Inter-Partition Edges: 91324
+Inter-Partition Edges Ratio: 0.33
+========= enron ('range', 12) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 89.14
+Inter-Partition Edges: 94918
+Inter-Partition Edges Ratio: 0.34
+========= enron ('range', 14) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 89.43
+Inter-Partition Edges: 97580
+Inter-Partition Edges Ratio: 0.35
+========= enron ('range', 16) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 91.36
+Inter-Partition Edges: 109216
+Inter-Partition Edges Ratio: 0.4
+========= enron ('range', 18) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 92.71
+Inter-Partition Edges: 106217
+Inter-Partition Edges Ratio: 0.38
+========= enron ('range', 20) =========
+Total Vertices: 69244, Edges: 276143
+Normalized edge range: 93.71
+Inter-Partition Edges: 102974
+Inter-Partition Edges Ratio: 0.37
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.02  3.13
+ 4.00  0.05 13.58
+ 6.00  0.03  7.55
+ 8.00  0.06 14.24
+10.00  0.06 15.02
+12.00  0.07 19.48
+14.00  0.08 27.39
+16.00  0.08 24.99
+18.00  0.08 27.42
+20.00  0.13 37.09
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.22 36.67
+ 4.00  0.33 65.89
+ 6.00  0.47 75.14
+ 8.00  0.64 81.77
+10.00  0.76 85.36
+12.00  0.77 89.14
+14.00  0.75 89.43
+16.00  0.83 91.36
+18.00  1.00 92.71
+20.00  1.07 93.71
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.51
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.95
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.13
+ 4.00  0.25
+ 6.00  0.32
+ 8.00  0.32
+10.00  0.33
+12.00  0.34
+14.00  0.35
+16.00  0.40
+18.00  0.38
+20.00  0.37
+Analyzing input graph: wordassociation-2011
+Processed 0.0 million vertices
+========= wordassociation-2011 ('modulo', 2) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 0.23
+Inter-Partition Edges: 37553
+Inter-Partition Edges Ratio: 0.52
+========= wordassociation-2011 ('modulo', 4) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 2.68
+Inter-Partition Edges: 55619
+Inter-Partition Edges Ratio: 0.77
+========= wordassociation-2011 ('modulo', 6) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 5.87
+Inter-Partition Edges: 61715
+Inter-Partition Edges Ratio: 0.86
+========= wordassociation-2011 ('modulo', 8) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 8.54
+Inter-Partition Edges: 64489
+Inter-Partition Edges Ratio: 0.89
+========= wordassociation-2011 ('modulo', 10) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 8.61
+Inter-Partition Edges: 66288
+Inter-Partition Edges Ratio: 0.92
+========= wordassociation-2011 ('modulo', 12) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 9.71
+Inter-Partition Edges: 67283
+Inter-Partition Edges Ratio: 0.93
+========= wordassociation-2011 ('modulo', 14) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 13.55
+Inter-Partition Edges: 68007
+Inter-Partition Edges Ratio: 0.94
+========= wordassociation-2011 ('modulo', 16) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 14.68
+Inter-Partition Edges: 68632
+Inter-Partition Edges Ratio: 0.95
+========= wordassociation-2011 ('modulo', 18) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 12.76
+Inter-Partition Edges: 69152
+Inter-Partition Edges Ratio: 0.96
+========= wordassociation-2011 ('modulo', 20) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 22.06
+Inter-Partition Edges: 69384
+Inter-Partition Edges Ratio: 0.96
+========= wordassociation-2011 ('range', 2) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 1.77
+Inter-Partition Edges: 21104
+Inter-Partition Edges Ratio: 0.29
+========= wordassociation-2011 ('range', 4) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 4.86
+Inter-Partition Edges: 31361
+Inter-Partition Edges Ratio: 0.43
+========= wordassociation-2011 ('range', 6) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 7.65
+Inter-Partition Edges: 36263
+Inter-Partition Edges Ratio: 0.5
+========= wordassociation-2011 ('range', 8) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 9.47
+Inter-Partition Edges: 37439
+Inter-Partition Edges Ratio: 0.52
+========= wordassociation-2011 ('range', 10) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 17.19
+Inter-Partition Edges: 39580
+Inter-Partition Edges Ratio: 0.55
+========= wordassociation-2011 ('range', 12) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 15.86
+Inter-Partition Edges: 40383
+Inter-Partition Edges Ratio: 0.56
+========= wordassociation-2011 ('range', 14) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 19.08
+Inter-Partition Edges: 40787
+Inter-Partition Edges Ratio: 0.57
+========= wordassociation-2011 ('range', 16) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 30.73
+Inter-Partition Edges: 41339
+Inter-Partition Edges Ratio: 0.57
+========= wordassociation-2011 ('range', 18) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 31.34
+Inter-Partition Edges: 42168
+Inter-Partition Edges Ratio: 0.58
+========= wordassociation-2011 ('range', 20) =========
+Total Vertices: 10617, Edges: 72172
+Normalized edge range: 25.87
+Inter-Partition Edges: 42354
+Inter-Partition Edges Ratio: 0.59
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.23
+ 4.00  0.01  2.68
+ 6.00  0.02  5.87
+ 8.00  0.03  8.54
+10.00  0.03  8.61
+12.00  0.03  9.71
+14.00  0.04 13.55
+16.00  0.04 14.68
+18.00  0.03 12.76
+20.00  0.05 22.06
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.01  1.77
+ 4.00  0.02  4.86
+ 6.00  0.03  7.65
+ 8.00  0.04  9.47
+10.00  0.05 17.19
+12.00  0.05 15.86
+14.00  0.07 19.08
+16.00  0.09 30.73
+18.00  0.09 31.34
+20.00  0.08 25.87
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.52
+ 4.00  0.77
+ 6.00  0.86
+ 8.00  0.89
+10.00  0.92
+12.00  0.93
+14.00  0.94
+16.00  0.95
+18.00  0.96
+20.00  0.96
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.29
+ 4.00  0.43
+ 6.00  0.50
+ 8.00  0.52
+10.00  0.55
+12.00  0.56
+14.00  0.57
+16.00  0.57
+18.00  0.58
+20.00  0.59
+Analyzing input graph: enwiki-2015
+Processed 0.0 million vertices
+Processed 1.0 million vertices
+Processed 2.0 million vertices
+Processed 3.0 million vertices
+Processed 4.0 million vertices
+========= enwiki-2015 ('modulo', 2) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.08
+Inter-Partition Edges: 53782292
+Inter-Partition Edges Ratio: 0.51
+========= enwiki-2015 ('modulo', 4) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.34
+Inter-Partition Edges: 80370535
+Inter-Partition Edges Ratio: 0.76
+========= enwiki-2015 ('modulo', 6) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.74
+Inter-Partition Edges: 89132865
+Inter-Partition Edges Ratio: 0.84
+========= enwiki-2015 ('modulo', 8) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.58
+Inter-Partition Edges: 93484365
+Inter-Partition Edges Ratio: 0.88
+========= enwiki-2015 ('modulo', 10) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.8
+Inter-Partition Edges: 96086978
+Inter-Partition Edges Ratio: 0.9
+========= enwiki-2015 ('modulo', 12) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 1.29
+Inter-Partition Edges: 97812612
+Inter-Partition Edges Ratio: 0.92
+========= enwiki-2015 ('modulo', 14) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 0.68
+Inter-Partition Edges: 99046465
+Inter-Partition Edges Ratio: 0.93
+========= enwiki-2015 ('modulo', 16) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 1.04
+Inter-Partition Edges: 99965217
+Inter-Partition Edges Ratio: 0.94
+========= enwiki-2015 ('modulo', 18) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 1.65
+Inter-Partition Edges: 100682994
+Inter-Partition Edges Ratio: 0.95
+========= enwiki-2015 ('modulo', 20) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 1.34
+Inter-Partition Edges: 101256545
+Inter-Partition Edges Ratio: 0.95
+========= enwiki-2015 ('range', 2) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 19.07
+Inter-Partition Edges: 25178697
+Inter-Partition Edges Ratio: 0.24
+========= enwiki-2015 ('range', 4) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 21.85
+Inter-Partition Edges: 38983758
+Inter-Partition Edges Ratio: 0.37
+========= enwiki-2015 ('range', 6) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 33.7
+Inter-Partition Edges: 42995089
+Inter-Partition Edges Ratio: 0.4
+========= enwiki-2015 ('range', 8) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 30.63
+Inter-Partition Edges: 45842335
+Inter-Partition Edges Ratio: 0.43
+========= enwiki-2015 ('range', 10) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 40.45
+Inter-Partition Edges: 46767983
+Inter-Partition Edges Ratio: 0.44
+========= enwiki-2015 ('range', 12) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 40.72
+Inter-Partition Edges: 47481723
+Inter-Partition Edges Ratio: 0.45
+========= enwiki-2015 ('range', 14) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 48.5
+Inter-Partition Edges: 49078304
+Inter-Partition Edges Ratio: 0.46
+========= enwiki-2015 ('range', 16) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 50.16
+Inter-Partition Edges: 48996145
+Inter-Partition Edges Ratio: 0.46
+========= enwiki-2015 ('range', 18) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 54.19
+Inter-Partition Edges: 50436358
+Inter-Partition Edges Ratio: 0.47
+========= enwiki-2015 ('range', 20) =========
+Total Vertices: 4853050, Edges: 106314263
+Normalized edge range: 53.07
+Inter-Partition Edges: 49940854
+Inter-Partition Edges Ratio: 0.47
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.08
+ 4.00  0.00  0.34
+ 6.00  0.00  0.74
+ 8.00  0.00  0.58
+10.00  0.00  0.80
+12.00  0.00  1.29
+14.00  0.00  0.68
+16.00  0.00  1.04
+18.00  0.00  1.65
+20.00  0.00  1.34
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.11 19.07
+ 4.00  0.11 21.85
+ 6.00  0.13 33.70
+ 8.00  0.13 30.63
+10.00  0.15 40.45
+12.00  0.15 40.72
+14.00  0.19 48.50
+16.00  0.20 50.16
+18.00  0.22 54.19
+20.00  0.22 53.07
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.51
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.95
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.24
+ 4.00  0.37
+ 6.00  0.40
+ 8.00  0.43
+10.00  0.44
+12.00  0.45
+14.00  0.46
+16.00  0.46
+18.00  0.47
+20.00  0.47
+Analyzing input graph: hollywood-2011
+Processed 0.0 million vertices
+Processed 1.0 million vertices
+Processed 2.0 million vertices
+========= hollywood-2011 ('modulo', 2) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 0.01
+Inter-Partition Edges: 115360816
+Inter-Partition Edges Ratio: 0.5
+========= hollywood-2011 ('modulo', 4) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 0.51
+Inter-Partition Edges: 172935316
+Inter-Partition Edges Ratio: 0.76
+========= hollywood-2011 ('modulo', 6) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 0.71
+Inter-Partition Edges: 192053658
+Inter-Partition Edges Ratio: 0.84
+========= hollywood-2011 ('modulo', 8) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 0.8
+Inter-Partition Edges: 201584216
+Inter-Partition Edges Ratio: 0.88
+========= hollywood-2011 ('modulo', 10) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 0.45
+Inter-Partition Edges: 207291650
+Inter-Partition Edges Ratio: 0.91
+========= hollywood-2011 ('modulo', 12) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 1.36
+Inter-Partition Edges: 211054116
+Inter-Partition Edges Ratio: 0.92
+========= hollywood-2011 ('modulo', 14) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 1.1
+Inter-Partition Edges: 213741566
+Inter-Partition Edges Ratio: 0.93
+========= hollywood-2011 ('modulo', 16) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 1.67
+Inter-Partition Edges: 215742532
+Inter-Partition Edges Ratio: 0.94
+========= hollywood-2011 ('modulo', 18) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 1.4
+Inter-Partition Edges: 217301208
+Inter-Partition Edges Ratio: 0.95
+========= hollywood-2011 ('modulo', 20) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 1.29
+Inter-Partition Edges: 218542700
+Inter-Partition Edges Ratio: 0.95
+========= hollywood-2011 ('range', 2) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 6.34
+Inter-Partition Edges: 30242802
+Inter-Partition Edges Ratio: 0.13
+========= hollywood-2011 ('range', 4) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 45.27
+Inter-Partition Edges: 58017488
+Inter-Partition Edges Ratio: 0.25
+========= hollywood-2011 ('range', 6) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 83.52
+Inter-Partition Edges: 54093600
+Inter-Partition Edges Ratio: 0.24
+========= hollywood-2011 ('range', 8) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 97.33
+Inter-Partition Edges: 65605026
+Inter-Partition Edges Ratio: 0.29
+========= hollywood-2011 ('range', 10) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 99.67
+Inter-Partition Edges: 70537028
+Inter-Partition Edges Ratio: 0.31
+========= hollywood-2011 ('range', 12) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 99.85
+Inter-Partition Edges: 68613940
+Inter-Partition Edges Ratio: 0.3
+========= hollywood-2011 ('range', 14) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 99.89
+Inter-Partition Edges: 76606844
+Inter-Partition Edges Ratio: 0.33
+========= hollywood-2011 ('range', 16) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 99.94
+Inter-Partition Edges: 75656728
+Inter-Partition Edges Ratio: 0.33
+========= hollywood-2011 ('range', 18) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 99.95
+Inter-Partition Edges: 74693216
+Inter-Partition Edges Ratio: 0.33
+========= hollywood-2011 ('range', 20) =========
+Total Vertices: 2180759, Edges: 228985632
+Normalized edge range: 99.96
+Inter-Partition Edges: 79134414
+Inter-Partition Edges Ratio: 0.35
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.01
+ 4.00  0.00  0.51
+ 6.00  0.00  0.71
+ 8.00  0.00  0.80
+10.00  0.00  0.45
+12.00  0.00  1.36
+14.00  0.00  1.10
+16.00  0.00  1.67
+18.00  0.00  1.40
+20.00  0.00  1.29
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.03  6.34
+ 4.00  0.22 45.27
+ 6.00  0.50 83.52
+ 8.00  0.59 97.33
+10.00  0.53 99.67
+12.00  0.66 99.85
+14.00  0.60 99.89
+16.00  0.71 99.94
+18.00  0.70 99.95
+20.00  0.70 99.96
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.91
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.95
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.13
+ 4.00  0.25
+ 6.00  0.24
+ 8.00  0.29
+10.00  0.31
+12.00  0.30
+14.00  0.33
+16.00  0.33
+18.00  0.33
+20.00  0.35
+
+
+================= 
+Analyzing input graph: hollywood-2009
+Processed 0.0 million vertices
+Processed 1.0 million vertices
+========= hollywood-2009 ('modulo', 2) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 0.18
+Inter-Partition Edges: 56847886
+Inter-Partition Edges Ratio: 0.5
+========= hollywood-2009 ('modulo', 4) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 0.3
+Inter-Partition Edges: 85194156
+Inter-Partition Edges Ratio: 0.75
+========= hollywood-2009 ('modulo', 6) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 0.43
+Inter-Partition Edges: 94602562
+Inter-Partition Edges Ratio: 0.83
+========= hollywood-2009 ('modulo', 8) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 0.72
+Inter-Partition Edges: 99284922
+Inter-Partition Edges Ratio: 0.87
+========= hollywood-2009 ('modulo', 10) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 0.68
+Inter-Partition Edges: 102083558
+Inter-Partition Edges Ratio: 0.9
+========= hollywood-2009 ('modulo', 12) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 0.86
+Inter-Partition Edges: 103934262
+Inter-Partition Edges Ratio: 0.91
+========= hollywood-2009 ('modulo', 14) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 1.19
+Inter-Partition Edges: 105253714
+Inter-Partition Edges Ratio: 0.92
+========= hollywood-2009 ('modulo', 16) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 1.48
+Inter-Partition Edges: 106241550
+Inter-Partition Edges Ratio: 0.93
+========= hollywood-2009 ('modulo', 18) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 1.57
+Inter-Partition Edges: 106998660
+Inter-Partition Edges Ratio: 0.94
+========= hollywood-2009 ('modulo', 20) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 1.21
+Inter-Partition Edges: 107608548
+Inter-Partition Edges Ratio: 0.94
+========= hollywood-2009 ('range', 2) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 41.88
+Inter-Partition Edges: 12993526
+Inter-Partition Edges Ratio: 0.11
+========= hollywood-2009 ('range', 4) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 64.66
+Inter-Partition Edges: 17378060
+Inter-Partition Edges Ratio: 0.15
+========= hollywood-2009 ('range', 6) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 72.61
+Inter-Partition Edges: 24936520
+Inter-Partition Edges Ratio: 0.22
+========= hollywood-2009 ('range', 8) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 74.32
+Inter-Partition Edges: 24307120
+Inter-Partition Edges Ratio: 0.21
+========= hollywood-2009 ('range', 10) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 89.49
+Inter-Partition Edges: 27244776
+Inter-Partition Edges Ratio: 0.24
+========= hollywood-2009 ('range', 12) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 92.26
+Inter-Partition Edges: 28331190
+Inter-Partition Edges Ratio: 0.25
+========= hollywood-2009 ('range', 14) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 94.65
+Inter-Partition Edges: 28565282
+Inter-Partition Edges Ratio: 0.25
+========= hollywood-2009 ('range', 16) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 98.77
+Inter-Partition Edges: 31160468
+Inter-Partition Edges Ratio: 0.27
+========= hollywood-2009 ('range', 18) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 99.21
+Inter-Partition Edges: 29653234
+Inter-Partition Edges Ratio: 0.26
+========= hollywood-2009 ('range', 20) =========
+Total Vertices: 1139905, Edges: 113891327
+Normalized edge range: 99.31
+Inter-Partition Edges: 30543096
+Inter-Partition Edges Ratio: 0.27
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.18
+ 4.00  0.00  0.30
+ 6.00  0.00  0.43
+ 8.00  0.00  0.72
+10.00  0.00  0.68
+12.00  0.00  0.86
+14.00  0.00  1.19
+16.00  0.00  1.48
+18.00  0.00  1.57
+20.00  0.00  1.21
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.26 41.88
+ 4.00  0.39 64.66
+ 6.00  0.49 72.61
+ 8.00  0.43 74.32
+10.00  0.56 89.49
+12.00  0.61 92.26
+14.00  0.63 94.65
+16.00  0.64 98.77
+18.00  0.78 99.21
+20.00  0.80 99.31
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.83
+ 8.00  0.87
+10.00  0.90
+12.00  0.91
+14.00  0.92
+16.00  0.93
+18.00  0.94
+20.00  0.94
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.11
+ 4.00  0.15
+ 6.00  0.22
+ 8.00  0.21
+10.00  0.24
+12.00  0.25
+14.00  0.25
+16.00  0.27
+18.00  0.26
+20.00  0.27
+Analyzing input graph: ljournal-2008
+Processed 0.0 million vertices
+Processed 1.0 million vertices
+Processed 2.0 million vertices
+Processed 3.0 million vertices
+Processed 4.0 million vertices
+Processed 5.0 million vertices
+========= ljournal-2008 ('modulo', 2) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.32
+Inter-Partition Edges: 40083944
+Inter-Partition Edges Ratio: 0.51
+========= ljournal-2008 ('modulo', 4) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.53
+Inter-Partition Edges: 59716964
+Inter-Partition Edges Ratio: 0.76
+========= ljournal-2008 ('modulo', 6) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.55
+Inter-Partition Edges: 66124908
+Inter-Partition Edges Ratio: 0.84
+========= ljournal-2008 ('modulo', 8) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.73
+Inter-Partition Edges: 69269863
+Inter-Partition Edges Ratio: 0.88
+========= ljournal-2008 ('modulo', 10) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.81
+Inter-Partition Edges: 71136461
+Inter-Partition Edges Ratio: 0.9
+========= ljournal-2008 ('modulo', 12) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.91
+Inter-Partition Edges: 72368934
+Inter-Partition Edges Ratio: 0.92
+========= ljournal-2008 ('modulo', 14) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.72
+Inter-Partition Edges: 73244336
+Inter-Partition Edges Ratio: 0.93
+========= ljournal-2008 ('modulo', 16) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 0.9
+Inter-Partition Edges: 73887762
+Inter-Partition Edges Ratio: 0.94
+========= ljournal-2008 ('modulo', 18) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 1.53
+Inter-Partition Edges: 74385848
+Inter-Partition Edges Ratio: 0.94
+========= ljournal-2008 ('modulo', 20) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 1.14
+Inter-Partition Edges: 74777511
+Inter-Partition Edges Ratio: 0.95
+========= ljournal-2008 ('range', 2) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 23.22
+Inter-Partition Edges: 12579026
+Inter-Partition Edges Ratio: 0.16
+========= ljournal-2008 ('range', 4) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 48.96
+Inter-Partition Edges: 19768924
+Inter-Partition Edges Ratio: 0.25
+========= ljournal-2008 ('range', 6) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 53.29
+Inter-Partition Edges: 22774681
+Inter-Partition Edges Ratio: 0.29
+========= ljournal-2008 ('range', 8) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 63.34
+Inter-Partition Edges: 23908182
+Inter-Partition Edges Ratio: 0.3
+========= ljournal-2008 ('range', 10) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 67.18
+Inter-Partition Edges: 25072129
+Inter-Partition Edges Ratio: 0.32
+========= ljournal-2008 ('range', 12) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 70.64
+Inter-Partition Edges: 26441895
+Inter-Partition Edges Ratio: 0.33
+========= ljournal-2008 ('range', 14) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 72.2
+Inter-Partition Edges: 27454299
+Inter-Partition Edges Ratio: 0.35
+========= ljournal-2008 ('range', 16) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 73.8
+Inter-Partition Edges: 28147250
+Inter-Partition Edges Ratio: 0.36
+========= ljournal-2008 ('range', 18) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 75.99
+Inter-Partition Edges: 28803238
+Inter-Partition Edges Ratio: 0.36
+========= ljournal-2008 ('range', 20) =========
+Total Vertices: 5363260, Edges: 79023142
+Normalized edge range: 77.57
+Inter-Partition Edges: 29072845
+Inter-Partition Edges Ratio: 0.37
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.32
+ 4.00  0.00  0.53
+ 6.00  0.00  0.55
+ 8.00  0.00  0.73
+10.00  0.00  0.81
+12.00  0.00  0.91
+14.00  0.00  0.72
+16.00  0.00  0.90
+18.00  0.00  1.53
+20.00  0.00  1.14
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.13 23.22
+ 4.00  0.27 48.96
+ 6.00  0.30 53.29
+ 8.00  0.36 63.34
+10.00  0.39 67.18
+12.00  0.42 70.64
+14.00  0.44 72.20
+16.00  0.43 73.80
+18.00  0.45 75.99
+20.00  0.47 77.57
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.51
+ 4.00  0.76
+ 6.00  0.84
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.94
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.16
+ 4.00  0.25
+ 6.00  0.29
+ 8.00  0.30
+10.00  0.32
+12.00  0.33
+14.00  0.35
+16.00  0.36
+18.00  0.36
+20.00  0.37
+Analyzing input graph: uk-2007-05@1000000
+Processed 0.0 million vertices
+========= uk-2007-05@1000000 ('modulo', 2) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.02
+Inter-Partition Edges: 20687211
+Inter-Partition Edges Ratio: 0.5
+========= uk-2007-05@1000000 ('modulo', 4) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.04
+Inter-Partition Edges: 30992860
+Inter-Partition Edges Ratio: 0.75
+========= uk-2007-05@1000000 ('modulo', 6) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.2
+Inter-Partition Edges: 34414111
+Inter-Partition Edges Ratio: 0.83
+========= uk-2007-05@1000000 ('modulo', 8) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.14
+Inter-Partition Edges: 36118360
+Inter-Partition Edges Ratio: 0.88
+========= uk-2007-05@1000000 ('modulo', 10) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.29
+Inter-Partition Edges: 37137032
+Inter-Partition Edges Ratio: 0.9
+========= uk-2007-05@1000000 ('modulo', 12) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.37
+Inter-Partition Edges: 37814277
+Inter-Partition Edges Ratio: 0.92
+========= uk-2007-05@1000000 ('modulo', 14) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.49
+Inter-Partition Edges: 38294427
+Inter-Partition Edges Ratio: 0.93
+========= uk-2007-05@1000000 ('modulo', 16) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.47
+Inter-Partition Edges: 38655989
+Inter-Partition Edges Ratio: 0.94
+========= uk-2007-05@1000000 ('modulo', 18) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.49
+Inter-Partition Edges: 38936406
+Inter-Partition Edges Ratio: 0.94
+========= uk-2007-05@1000000 ('modulo', 20) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 0.41
+Inter-Partition Edges: 39161194
+Inter-Partition Edges Ratio: 0.95
+========= uk-2007-05@1000000 ('range', 2) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 19.98
+Inter-Partition Edges: 1670886
+Inter-Partition Edges Ratio: 0.04
+========= uk-2007-05@1000000 ('range', 4) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 39.8
+Inter-Partition Edges: 2564480
+Inter-Partition Edges Ratio: 0.06
+========= uk-2007-05@1000000 ('range', 6) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 49.5
+Inter-Partition Edges: 3025852
+Inter-Partition Edges Ratio: 0.07
+========= uk-2007-05@1000000 ('range', 8) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 58.22
+Inter-Partition Edges: 6977568
+Inter-Partition Edges Ratio: 0.17
+========= uk-2007-05@1000000 ('range', 10) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 61.86
+Inter-Partition Edges: 3350309
+Inter-Partition Edges Ratio: 0.08
+========= uk-2007-05@1000000 ('range', 12) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 77.23
+Inter-Partition Edges: 4585912
+Inter-Partition Edges Ratio: 0.11
+========= uk-2007-05@1000000 ('range', 14) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 63.35
+Inter-Partition Edges: 7430901
+Inter-Partition Edges Ratio: 0.18
+========= uk-2007-05@1000000 ('range', 16) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 79.92
+Inter-Partition Edges: 7980937
+Inter-Partition Edges Ratio: 0.19
+========= uk-2007-05@1000000 ('range', 18) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 80.7
+Inter-Partition Edges: 4346060
+Inter-Partition Edges Ratio: 0.11
+========= uk-2007-05@1000000 ('range', 20) =========
+Total Vertices: 1000000, Edges: 41247159
+Normalized edge range: 79.3
+Inter-Partition Edges: 7915469
+Inter-Partition Edges Ratio: 0.19
+=== PartitionStyle: modulo, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.00  0.02
+ 4.00  0.00  0.04
+ 6.00  0.00  0.20
+ 8.00  0.00  0.14
+10.00  0.00  0.29
+12.00  0.00  0.37
+14.00  0.00  0.49
+16.00  0.00  0.47
+18.00  0.00  0.49
+20.00  0.00  0.41
+=== PartitionStyle: range, Num of Partitions, CV, Normalized Edge Range ===
+ 2.00  0.11 19.98
+ 4.00  0.18 39.80
+ 6.00  0.25 49.50
+ 8.00  0.27 58.22
+10.00  0.31 61.86
+12.00  0.40 77.23
+14.00  0.36 63.35
+16.00  0.42 79.92
+18.00  0.46 80.70
+20.00  0.43 79.30
+=== PartitionStyle: modulo, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.50
+ 4.00  0.75
+ 6.00  0.83
+ 8.00  0.88
+10.00  0.90
+12.00  0.92
+14.00  0.93
+16.00  0.94
+18.00  0.94
+20.00  0.95
+=== PartitionStyle: range, Num of Partitions, Inter-Partition Edge Ratio ===
+ 2.00  0.04
+ 4.00  0.06
+ 6.00  0.07
+ 8.00  0.17
+10.00  0.08
+12.00  0.11
+14.00  0.18
+16.00  0.19
+18.00  0.11
+20.00  0.19

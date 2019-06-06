@@ -156,11 +156,11 @@ def start_sar_readings(ssh_client, node_exp_folder_path, granularity_in_secs=1):
 
 
 # Starts giraph job with specified algorithm (giraph class name) and input graph.
-def run_giraph_job(ssh_client, node_exp_folder_path, giraph_class_name, input_graph_name):
+def run_giraph_job(ssh_client, node_exp_folder_path, giraph_class_name, input_graph_name, num_workers, partitioner, vertex_count):
     print("Starting giraph job")
     script_file = path_to_linux_style(os.path.join(remote_scripts_folder, run_giraph_job_file))
-    ssh_execute_command(ssh_client, 'bash {0} {1} {2} {3} {4}'.format(script_file, remote_scripts_folder, node_exp_folder_path, 
-        giraph_class_name, input_graph_name))
+    ssh_execute_command(ssh_client, 'bash {0} {1} {2} {3} {4} {5} {6} {7}'.format(script_file, remote_scripts_folder, node_exp_folder_path, 
+        giraph_class_name, input_graph_name, num_workers, partitioner, vertex_count))
 
 
 # Stops SAR readings
@@ -213,7 +213,7 @@ def reset_network_rate_limit(ssh_client):
 
 
 # Runs a single experiment with specific configurations like input graph and network rate
-def run_experiment(exp_run_id, exp_run_desc, giraph_class_name, input_graph_name, link_bandwidth_mbps, cache_hdfs_file):
+def run_experiment(exp_run_id, exp_run_desc, giraph_class_name, input_graph_name, num_workers, partitioner, vertex_count, link_bandwidth_mbps, cache_hdfs_file):
     experiment_start_time = datetime.datetime.now()
     experiment_id = "Exp-" + experiment_start_time.strftime("%Y-%m-%d-%H-%M-%S")
 
@@ -238,11 +238,11 @@ def run_experiment(exp_run_id, exp_run_desc, giraph_class_name, input_graph_name
                 create_folder_if_not_exists(ssh_client, node_exp_folder_path)
 
                 # Clear all kinds of file data from caches
-                clear_page_inode_dentries_cache(ssh_client)
+                # clear_page_inode_dentries_cache(ssh_client)
 
                 # Delete any non-default qdisc and set required network rate.
-                reset_network_rate_limit(ssh_client)
-                set_network_rate_limit(ssh_client, link_bandwidth_mbps)
+                # reset_network_rate_limit(ssh_client)
+                # set_network_rate_limit(ssh_client, link_bandwidth_mbps)
 
                 start_sar_readings(ssh_client, node_exp_folder_path)
 
@@ -254,7 +254,7 @@ def run_experiment(exp_run_id, exp_run_desc, giraph_class_name, input_graph_name
         driver_exp_folder_path = path_to_linux_style(os.path.join(experiment_folder_path, designated_giraph_driver_node))
         
         with create_ssh_client(designated_giraph_driver_node) as ssh_client:
-            run_giraph_job(ssh_client, driver_exp_folder_path, giraph_class_name, input_graph_name)
+            run_giraph_job(ssh_client, driver_exp_folder_path, giraph_class_name, input_graph_name, num_workers, partitioner, vertex_count)
         # input("Press [Enter] to continue.")
 
         giraph_job_end_time = datetime.datetime.now()
@@ -290,7 +290,9 @@ def run_experiment(exp_run_id, exp_run_desc, giraph_class_name, input_graph_name
                 "InputGraphFile": input_graph_name,
                 "LinkBandwidthMbps": link_bandwidth_mbps,
                 "PaddingInSecs": padding_in_secs,
-                "Comments": ""
+                "Comments": "",
+                "NumberOfWorkers": num_workers,
+                "Partitioner": partitioner,
             }, setup_file, indent=4, sort_keys=True)
 
         # Run one-time cleanup script on driver node 
@@ -324,26 +326,45 @@ def setup_env():
     start_hdfs_yarn_cluster()
 
 
+input_files_dict = {
+    # "darwini-50m"               : ["D:\Scratch\\darwini-50m-edges.graph-txt", "darwini", 154549],
+    "cnr-2000.graph-txt"                  : 325557,
+    "dblp-2011.graph-txt"                 : 986324,
+    "enron.graph-txt"                     : 69244,
+    "wordassociation-2011.graph-txt"      : 10617,
+    "enwiki-2015.graph-txt"               : 4853050,
+    "ljournal-2008.graph-txt"             : 5363260,
+    "hollywood-2009.graph-txt"            : 1139905,
+    "hollywood-2011.graph-txt"            : 2180759,
+    "uk-2007-05@1000000.graph-txt"        : 1000000,
+}
+
+
 # Run experiments
 def run(exp_run_desc):
     giraph_class_name = "SimplePageRankComputation"
 
-    input_graph_files = [ "uk-2002.graph-txt" ] # "uk-2007-05.graph-txt", "twitter.graph-txt", "darwini-2b-edges", "darwini-5b-edges" ]
-    link_bandwidth_mbps = [1000]   # [200, 500, 1000, 2000, 3000, 5000, 8000, 10000]
+    # input_graph_files = [ "hollywood-2011.graph-txt" ] #"enwiki-2015.graph-txt" ] # , "wordassociation-2011.graph-txt", "uk-2002.graph-txt", "uk-2007-05.graph-txt", "twitter.graph-txt", "darwini-2b-edges", "darwini-5b-edges" ]
+    link_bandwidth_mbps = [0]   # [200, 500, 1000, 2000, 3000, 5000, 8000, 10000]
     iterations = range(1, 2)
     cache_hdfs_input = False
+    partitioner_list = ["Hash", "SimpleLongRange"]
+    num_workers_list = range(4, 81, 4)
 
     # Command line arguments
     exp_run_id = "Run-" + datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
     # Run all experiments
-    for iter_ in iterations:
-        for link_bandwidth in link_bandwidth_mbps:
-            for input_graph_name in input_graph_files:
-                print("Running experiment: {0}, {1}, {2}".format(iter_, input_graph_name, link_bandwidth))
-                run_experiment(exp_run_id, exp_run_desc, giraph_class_name, input_graph_name, link_bandwidth, cache_hdfs_file=cache_hdfs_input)
-                # time.sleep(1*60)
+    for num_workers in num_workers_list:
+        for partitioner in partitioner_list:
+            for iter_ in iterations:
+                for link_bandwidth in link_bandwidth_mbps:
+                    for input_graph_name, vertex_count in input_files_dict.items():
+                        print("Running experiment: {0}, {1}, {2}, workers: {3}, partitioner: {4}".format(iter_, input_graph_name, link_bandwidth, num_workers, partitioner))
+                        run_experiment(exp_run_id, exp_run_desc, giraph_class_name, input_graph_name, num_workers, partitioner, vertex_count, link_bandwidth, cache_hdfs_file=cache_hdfs_input)
+                        # time.sleep(1*60)
 
+    print("Experiment group runs {0} complete.".format(exp_run_id))
 
 def teardown_env():  
     print("Tearing down the environment...")      
