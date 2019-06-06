@@ -9,40 +9,19 @@ import numpy as np
 # input_file = "D:\Scratch\\uk-2007-05\\uk-2007-05.graph-txt"
 # input_style = "law"
 
-<<<<<<< HEAD
 input_files_dict = {
     # "darwini-50m"               : ["D:\Scratch\\darwini-50m-edges.graph-txt", "darwini", 154549],
-    
     "cnr-2000"                  : ["D:\Scratch\\cnr-2000\\cnr-2000.graph-txt", "law"],
     "dblp-2011"                 : ["D:\Scratch\\dblp-2011\\dblp-2011.graph-txt", "law"],
     "enron"                     : ["D:\Scratch\\enron\\enron.graph-txt", "law"],
-=======
-'''input_files_dict = {
-    "darwini-50m"               : ["D:\Scratch\\darwini-50m-edges.graph-txt", "darwini", 154549],
->>>>>>> a71489557b298c8f20c36ef359dfac6c426f87e4
     "wordassociation-2011"      : ["D:\Scratch\\wordassociation-2011\\wordassociation-2011.graph-txt", "law"],
     "enwiki-2015"               : ["D:\Scratch\\enwiki-2015\enwiki-2015.graph-txt", "law"],
-<<<<<<< HEAD
     "ljournal-2008"             : ["D:\Scratch\\ljournal-2008\\ljournal-2008.graph-txt", "law"],
     "hollywood-2009"            : ["D:\Scratch\\hollywood-2009\\hollywood-2009.graph-txt", "law"],
     "hollywood-2011"            : ["D:\Scratch\\hollywood-2011\\hollywood-2011.graph-txt", "law"],
     "twitter"                   : ["D:\Scratch\\twitter\\twitter.graph-txt", "law"],
     "uk-2002"                   : ["D:\Scratch\\uk-2002\\uk-2002.graph-txt", "law"],
     "uk-2007-05@1000000"        : ["D:\Scratch\\uk-2007-05@1000000\\uk-2007-05@1000000.graph-txt", "law"],
-=======
-}'''
-
-input_files_dict = {
-    "darwini-50m"               : ["input/darwini-50m-edges.graph-txt", "darwini", 154549],
-    "wordassociation-2011"      : ["input/wordassociation-2011.graph-txt", "law"],
-    "uk-2007-05"                : ["input/uk-2007-05.graph-txt", "law"],
-    "twitter"                   : ["input/twitter.graph-txt", "law"],
-    "enwiki-2015"               : ["input/enwiki-2015.graph-txt", "law"],
-    "cnr2000"                   : ["cnr-2000.graph-txt", "law"],
-    "dblp"                      : ["dblp-2011.graph.txt", "law"],
-    "enron"                     : ["enron.graph-txt", "law"],
-    "hollywood-2011"            : ["hollywood-2011.graph-txt", "law"],
->>>>>>> a71489557b298c8f20c36ef359dfac6c426f87e4
 }
 
 
