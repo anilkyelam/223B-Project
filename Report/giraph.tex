@@ -1,12 +1,11 @@
 \section{Apache Giraph}
 \label{sec:giraph}
 
-Description of Apache Giraph\cite{ApacheGiraph}.
-
-Apache Giraph (Apache Software Foundation 2012), is a popular open-source implementation of
-Pregel. Giraph uses Map-only Hadoop jobs to schedule and coordinate the 
+Apache Giraph (Apache Software Foundation 2012 \cite{ApacheGiraph}), is a 
+popular open-source implementation of
+Pregel. Giraph uses map-only Hadoop jobs to schedule and coordinate the 
 vertex-centric workers and uses HDFS for storing and accessing graph datasets. 
-It is developed in Java and has a large com- munity of developers and 
+It is developed in Java and has a large community of developers and 
 users such as Facebook\cite{GiraphAtFacebook}. 
 Giraph has a faster input loading time compared to Pregel 
 because of using byte array for graph storage. On the other hand, this method 
@@ -14,22 +13,14 @@ is not efficient for graph mutations, which lead to decentralized edges when rem
 Giraph inherits the benefits and deficiencies of the Pregel vertex-centric
 programming model. Its performance and scalability is algorithm and graph dependent, 
 and works very fast, e.g., on stationary algorithms like PageRank but not as fast on 
-traversal algorithms like single source shortest path (SSSP) (Roy 2014) andWCCs 
+traversal algorithms like single source shortest path (SSSP) (Roy 2014) and 
+WCCs 
 (Salihoglu and Widom 2014), particularly for graphs with a large diameter. 
 However, the ease of use of this framework and the community support has made it a 
 popular platform over which to develop other Pregel-like systems with feature enhancements 
 to the vertex-centric concept.
 
-
-Why pagerank?
-Needs to be global, traversing the whole graph. Examples include page rank and connected
-components, degree distribution.
-
-\subsection{Setting up Giraph}
-1. Look at all the settings file and decribe important settings 
-
-
-\subsubsection{Challenges for Beginner Giraph Users}
+\subsection{Challenges for Beginner Giraph Users}
 
 A significant amount of the time spent on this project was spent setting up our 
 cluster and installing Giraph and all of its dependencies. Even for a 
@@ -59,5 +50,3 @@ seems likely that Giraph is in fact optimized for such workloads, given the
 difficulty we experienced in trying to make Giraph use ``small'' input graphs 
 (less than a million 
 nodes).
-
-\subsection{Effect of different partition schemes}

@@ -1,53 +1,71 @@
 \section{Introduction}
 \label{sec:intro}
 
-The growing popularity of technologies such as Internet of Things (IoT), mobile devices, smart-
-phones, and social networks has led toward the emergence of "big data". Such applications 
-produce not just gigabytes or terabytes of data, but soon petabytes of data that need to be 
-actively processed. A large percentage of this growing dataset exists in the form of linked data, 
-more generally, graphs, of unprecedented sizes. Graphs from today's social networks contain
-billions of edges while inter-connected data from millions of IoT sensors can generate graphs
-that are exponentially larger. This requires large-scale graph processing to analyze the data 
-and generate useful statistics. Frequently applied algorithms to this end include shortest paths 
+The growing popularity of technologies such as the Internet of Things (IoT), 
+mobile devices, smartphones, and social networks has led to the emergence of 
+``big data.'' Such applications 
+produce not just gigabytes or terabytes, but petabytes of data that need to be 
+actively processed. A large percentage of this growing dataset exists in the 
+form of graphs of unprecedented sizes. Graphs from today's social networks 
+can contain
+trillions of edges \cite{GiraphAtFacebook}. Data from millions of IoT sensors 
+can generate graphs
+that are equally impressive in size. This requires large-scale graph processing 
+to analyze the data and generate useful statistics. Frequently applied 
+algorithms to this end include shortest paths 
 computations, different flavors of clustering, and different variations of page rank.
 
 Traditional big data analytics frameworks like Hadoop MapReduce\cite{Dean04}, 
-Apache Spark\cite{Zaharia:2012:RDD:2228298.2228301}, etc does not
-perform well for graph procesing. Previous studies \cite{Ammar:2018:EAD:3231751.3242935}, 
-\cite{Guo:2014:WGP:2650283.2650530} have repeatedly shown that these frameworks are too general 
-and does not make use of properties of graph algorithms that often exhibit poor locality of memory access, 
+Apache Spark\cite{Zaharia:2012:RDD:2228298.2228301}, and their peers do not
+perform well for graph processing. Previous studies 
+\cite{Ammar:2018:EAD:3231751.3242935, Guo:2014:WGP:2650283.2650530} have 
+repeatedly shown that these frameworks are too general 
+and do not account for properties of graph algorithms, such as poor locality of 
+memory access, 
 very little work per vertex, and a changing degree of parallelism over the course of execution.
 As a consequence, iterative graph processing systems started to emerge in 2010, starting with Google's 
-Pregel\cite{Malewicz:2010:PSL:1807167.1807184} that uses Valiant's Bulk Synchronous Parallel (BSP) 
-processing model for its computation, and promoted a "think like a vertex" notion for processing large 
+Pregel\cite{Malewicz:2010:PSL:1807167.1807184} system that uses Valiant's Bulk 
+Synchronous Parallel (BSP) 
+processing model for its computation. Pregel promotes a ``think like a vertex'' 
+notion for processing large 
 graphs. Following that, there has been an explosion in distributed graph processing frameworks like 
 Apache Giraph\cite{ApacheGiraph}, GraphLab\cite{GraphLab}, PowerGraph\cite{PowerGraph}, 
-Stratosphese\cite{Stratosphere}, Blogel\cite{Blogel}, etc (to name a few) that offer different 
+Stratosphere\cite{Stratosphere}, Blogel\cite{Blogel}, etc (to name a few) that 
+offer different 
 programming and computational models.
 
-The importance of balanced execution of running large workloads like Sort on big clusters has been 
-studied before (TritonSort\cite{Rasmussen:2013:TBE:2427631.2427634}), including studies of 
-big data frameworks like Spark (Osterhout et al.\cite{Ousterhout:2015:MSP:2789770.2789791} and 
-MapReduce (Themis\cite{Rasmussen:2012:TIM:2391229.2391242}), however there hasn't been a lot of 
-similar work for graph algortihms. Distributed graph processing platforms, like the ones above, make a 
-lot of design choices like the programming model (vertex or edge centric), distributed coordination
-(synchronous or asynchronous), partitioning schemes (vertex or edge cuts), specializing for certain kinds 
-of graphs, etc (which are discussed in detail in the next section) that influence the performance 
-of the frameworks. 
+The importance of balanced execution of running large workloads like sorting 
+algorithms on big clusters has been 
+studied before in works such as 
+TritonSort\cite{Rasmussen:2013:TBE:2427631.2427634}, Osterhout et al.'s 
+analysis of Spark \cite{Ousterhout:2015:MSP:2789770.2789791}, and Rassmussen et 
+al's work on MapReduce \cite{Rasmussen:2012:TIM:2391229.2391242}. 
+However, little similar work exists for graph applications. Distributed graph 
+processing platforms must make design choices such as which 
+programming model to use (vertex or edge centric), what type of coordination to 
+implement (synchronous or asynchronous), which partitioning schemes to apply 
+(vertex or edge cuts), whether to specializing for certain kinds 
+of graphs, and so forth. All of these decisions influence the performance 
+of the framework. 
 
-In this paper, we pick one of these design choices i.e., partitioning schemes that are
-used to divide input graph among workers, and study how different choices can affect the performance.
-Specifically, we focus on real-world graphs like social networks and web domains (made available 
-Laboratory for Web Algorithmics\cite{BoVWFI}\cite{BRSLLP}) and show some properties these (power law) 
-graphs exhibit under two very simple but different paritioning schemes called Hash and Range Partitioning. 
-Later, we run pagerank on these same graphs using a distributed graph processing framework 
-called Apache Giraph\cite{ApacheGiraph} using the afforementioned partioning schemes and 
-present our results.
+In this paper, we pick one of these design choices - the partitioning scheme 
+that is used to divide the input graph among the workers - and study how 
+different choices can affect the performance of a graph processing algorithm.
+We focus specifically on real-world graphs like social networks and web domains 
+from the Laboratory for Web Algorithmics\cite{BoVWFI}\cite{BRSLLP}. We 
+demonstrate some properties these graphs exhibit under two simple partitioning 
+schemes: hash partitioning and range partitioning. 
+Later, we run PageRank on these same graphs using the distributed graph 
+processing framework Apache Giraph \cite{ApacheGiraph} using the aforementioned 
+partitioning schemes and present our results.
 
 The rest of the paper is structured as follows. In sections \ref{sec:background} and \ref{sec:discussion},
 we present background of some design choices made by graph processing platforms and rationale for 
-choices we make for this paper. In sections \ref{sec:partitioning} and \ref{sec:eval}, we present 
-our partitioning schemes in detail, and theoretically study the effect of these schemes on selected 
-input graphs. In section \ref{sec:giraph}, we present results from our pagerank runs of Giraph. 
+choices we make for this paper. In section \ref{sec:eval}, we present 
+our partitioning schemes in detail, and study the theoretical effect of these 
+schemes on selected 
+input graphs. In section \ref{sec:giraph}, we present results 
+from our PageRank 
+runs of Giraph. Section \ref{sec:conclusion} concludes this paper.
 
 
