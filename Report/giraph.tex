@@ -53,12 +53,13 @@ Given limited total memory capacity of our cluster (4*16 GB), we could only run 
 (with around 100 million edges) as Giraph does everything in memory. We ran PageRank on each of the graphs 
 we discussed in previous section with both round-robin and range partitioners while varying the number of 
 giraph workers (each with 2 GB memory) from 2 to 20. The execution times (excluding any preprocessing time) 
-for these graphs using different partitioners are shown in figures \ref{fig:giraph_roundrobin} and 
+for these graphs using different partitioners are shown in Figures 
+\ref{fig:giraph_roundrobin} and 
 \ref{fig:giraph_range}. The missing data points for few input graphs at 2, 4 and 6 workers is due to the fact 
 that these graphs are too big and cannot be run with fewer workers. 
 
 
-\begin{figure}
+\begin{figure}[!t]
 	\centering
 	\includegraphics[width=\columnwidth]{./giraph_roundrobin.png}
     \caption{PageRank computation time for various graphs on Giraph with RoundRobin vertex partitioner
@@ -66,7 +67,7 @@ that these graphs are too big and cannot be run with fewer workers.
 	\label{fig:giraph_roundrobin}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!t]
 	\centering
 	\includegraphics[width=\columnwidth]{./giraph_range.png}
     \caption{PageRank computation time for various graphs on Giraph with Range vertex partitioner

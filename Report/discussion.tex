@@ -1,14 +1,15 @@
 \section{Discussion}
 \label{sec:discussion}
 
-Of the features of graph processing frameworks discussed in the last section,
-input partitioning seems like the one that effects the performance significanlty 
-- so we decided to focus on that in this paper. As we limit ourselves to vertex-centric models, 
-we only focus on vertex partitioning methods. There are two potential ways in which the 
-partitioning affects performance:
+Of the features of graph processing frameworks discussed in the last section, 
+we predicted input partitioning to be the one that affects the performance most 
+significantly. Since we limit ourselves to vertex-centric models, 
+we only focus on vertex partitioning methods. There are two potential ways in 
+which the partitioning strategy can affect performance:
 \begin{itemize}
     \item \textbf{The distribution of edges across partitions} Given that the computational complexity 
-    of most graph algorithms is on the order of number of edges, the share of each worker in the 
+    of many graph algorithms is on the order of number of edges, the share of 
+    each worker in the 
     computation depends on number of edges its partition has. In order to avoid stragglers 
     (especially for synchronous coordination frameworks like Giraph), the partitioning scheme
     should distribute the edges evenly and try to minimize the variation in the number of edges 
@@ -16,29 +17,34 @@ partitioning affects performance:
     \item \textbf{The fraction of inter-partition edges} As vertex partitioning puts vertices
     in different partitions, a lot of edges may end up with their vertices in different 
     partitions - we call these inter-partition edges. As graph algorithms work by sending 
-    messages over edges, messages sent over these inter-partition edges need to be sent across network
+    messages over edges, messages sent over these inter-partition edges need to 
+    be sent across the network
     and add to a lot of performance overhead. A good partitioning scheme tries to minimize the 
     number of inter-partition edges. Finding such an optimal partitioning is an NP-complete problem, 
-    so we can only go with heuristics.
+    so heuristics are required.
 \end{itemize}
 
-The partitioning heuristics can be as simple as hash-based ones that hash vertices into buckers 
+The partitioning heuristics can be as simple as hash-based ones that hash 
+vertices into buckets 
 without regard to their connectivity or complex ones that try to reduce the edge cuts across partitions 
 \cite{Salihoglu1} that comes at added computational overhead of partitioning itself. Our intial goal 
 was to implement a mix of simple and complex partitioning heuristics and evaluate the tradeoff between
 performance benefits of good partitioning versus the overhead of partitioning itself. However, due to 
 limited time and the complexity of implementing these heuristics on Apache Giraph, we restricted 
-ourselves to evaluating two simple yet very different partitioning schemes that does not incur any 
+ourselves to evaluating two simple partitioning schemes that incur minimal 
 computational overhead:
 \begin{itemize}
-    \item \textbf{Round-robin Partitioning} In this method of partitioning, we assign each vertex to 
-    partition on a round-robin basis (we use modulo operator on vertex id to acheive this). The idea 
-    is that for a graph with vertices indexed according to certain traversal algorithm, each partition 
-    would get vertices from all over the graph in a uniform way.
-    \item \textbf{Range Partitioning} In this one, we divide the vertex index space into equal ranges
-    (number of ranges being number of partitions required) and vertices from each range is assigned to 
-    each partition. This partitioning roughly divides the graph spatially and so partitions will exhibit 
-    better locality.
+    \item \textbf{Round-robin (Modulo) Partitioning} In this method of 
+    partitioning, we assign each vertex to 
+    partition on a round-robin basis (we use the modulo operator on the vertex 
+    ID to achieve this). The idea 
+    is that each partition 
+    should get vertices from all over the graph in a uniform way.
+    \item \textbf{Range Partitioning} Here, we divide the vertex index space 
+    into equal ranges where the number of ranges is the number of partitions 
+    required, and vertices from each range are assigned to 
+    each partition. This partitioning roughly divides the graph spatially and 
+    so partitions will presumably exhibit better locality.
 \end{itemize}
 
 Since these partitioning methods are straight-forward, we first perform a theoretical analysis of our 

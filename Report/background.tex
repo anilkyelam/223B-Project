@@ -1,71 +1,80 @@
 \section{Background}
 \label{sec:background}
 
-\textbf{Notation} A Graph G = (V, E), consists of a set of vertices, 
+\textbf{Notation} A graph G = (V, E) consists of a set of vertices, 
 V= \{$v_1$, $v_2$, ..., $v_n$\} and a set of edges, E = \{$e_1$, $e_2$, ...,$e_m$\} that 
 indicate pairwise relationships, E = V x V. The edges may be directed or undirected. 
 If ($v_i$, $v_j$) $\in$ E, then $v_i$ and $v_j$ are neighbors.
 
 In general, the execution of a graph algorithm in a typical graph processing framework
-involves \textit{reading input} data (that involves parsing one of the various graph formats 
+involves \textit{reading input data} (that involves parsing one of the various 
+graph formats 
 like an adjacency list, usually from a distributed file system like HDFS), 
 \textit{pre-processing} the data (depending on the algorithm), \textit{partitioning} 
 the input graph (into sets of vertices and edges that can be assigned to different workers),
 the actual \textit{computation} which runs the required graph algorithm and 
 \textit{writing output}. The frameworks differ in the implementation of each of these phases
 in many ways, but more importantly with the partitioning strategies and computation models. 
-Below, we summarize few major (and relevant) aspects where graph processing frameworks differ, 
+Below, we summarize a few key differences between graph processing frameworks, 
 based on a study by Heidari et al\cite{Heidari:2018:SGP:3212709.3199523}. 
 For a more detailed taxonomy of a multitude of 
-graph processing systems available, we refer the reader to the original paper.
+graph processing systems, we refer the reader to the original paper.
 
 \textbf{Architecture}
 The frameworks differ in whether they are shared-memory (single machine) or distributed. 
 Prior to the recent growth in distributed graph processing systems, there have been 
 several works on processing large scale graphs on a single machine. Even recently, there has been
-work that argues that distributed processing for graph processing incurs too much overhead and 
+work that argues that distributed processing for graph processing incurs too 
+much overhead and is
 not really needed in practice \cite{McSherry:2015:SBC:2831090.2831104}. However, shared memory 
 frameworks are inherently limited in the amount of memory and CPU cores present in that single 
 machine and are not scalable, so we only consider distributed frameworks in this paper.
 A distributed framework includes several processing units (workers) and
 each worker has access to only its own private memory. Each partition of the graph is typically 
-assigned to one worker to be processed while the workers interact with each other via messages over
-network. 
+assigned to one worker to be processed while the workers interact with each 
+other via messages over the network. 
 
 \textbf{Programming Model}
-The programming abstraction for each framework is designed based on a graph topology 
-elements such as vertices and edges. Vertex-centric programming is the most mature distributed 
+Two common programming abstractions exist in the frameworks we examine: 
+vertex-centric and edge-centric. Vertex-centric programming is the most mature 
+distributed 
 graph processing abstraction and several frameworks have been implemented using this concept.
 A vertex-centric system partitions the graph based on its vertices, and distributes the 
 vertices across different partitions. Edges that connect vertices lying in two different 
-partitions either form remote edges that are shared by both partitions or owned by the partition 
-with the source vertex. Consequently, messages sent along these edges need to be sent over 
-network to the remote worker that hold the neighboring vertex - which is usually taken care of 
-by the framework itself. In edge-centric frameworks, edges are the primary unit of computation 
+partitions either form remote edges that are shared by both partitions or local 
+edges that are owned by the partition 
+with the source vertex. Consequently, messages sent along these edges need to 
+be sent over the network to the remote worker that holds the neighboring 
+vertex. In edge-centric frameworks, edges are the primary unit of computation 
 and partitioning, and vertices that are attached to edges lying in 
-different partitions are replicated and shared between those partitions. It means that each 
-edge of the graph will be assigned to one partition, but each vertex might exist in more 
-than one partition. In this paper, we only look at vertex-centric frameworks like Giraph,
+different partitions are replicated and shared between those partitions. This 
+implies that each 
+edge of the graph will be assigned to only one partition, but vertices might be 
+copied to more than one partition. In this paper, we only look at 
+vertex-centric frameworks like Giraph,
 and hence we limit ourselves to vertex partitioning.
 
 \textbf{Distributed Coordination}
 Graph algorithms are usually iterative, so most graph processing platforms execute 
 algorithms synchronously, meaning that concurrent workers process their share of the work 
 iteratively, over a sequence of globally coordinated and well-defined iterations (generally called 
-Supersteps). For example, in case of PageRank, an iteration consists of each vertex receving messages
+supersteps). For example, in the case of PageRank, an iteration consists of 
+each vertex receiving messages
 from its neighbors, computing its rank and sending out new rank to its neighbors. All workers 
-wait until an iteration is finished and move on to the next iteration. This makes programming 
-much more intuitive but it is more prone to stragglers where one worker could delay each iteration
-affecting the overall performance. Giraph, like most graph processing platforms, uses 
+wait until an iteration is finished and move on to the next iteration. 
+Synchronous computation makes programming the system
+much more intuitive, but this strategy is more prone to having a straggler  
+delay all other workers. Giraph, like most graph processing platforms, uses 
 the synchronous model to allow for intuitive programming. 
 
-\textbf{Other} 
+\textbf{Other Framework Design Choices} 
 There are other aspects where frameworks differ, like whether the execution is disk-based or 
 memory-based, or how they handle fault tolerance. Disk-based frameworks store data to disk not 
 just while reading input and writing output, but even in between iterations, which hurts 
 performance but does not necessitate the memory that is large enough to hold all the data 
 during the computation. Giraph, like many other frameworks, is memory-based, meaning it never
-writes intermediate data to disk for better performance. Frameworks alsl provide checkpointing
+writes intermediate data to disk for better performance. Frameworks also 
+provide checkpointing
 and fault recovery mechanisms to recover from failures, however we did not consider any of those 
 for our purposes.
 
