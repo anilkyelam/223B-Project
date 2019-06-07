@@ -1,52 +1,88 @@
-\section{Apache Giraph}
+\subsection{Apache Giraph}
 \label{sec:giraph}
 
-Apache Giraph (Apache Software Foundation 2012 \cite{ApacheGiraph}), is a 
-popular open-source implementation of
-Pregel. Giraph uses map-only Hadoop jobs to schedule and coordinate the 
+Apache Giraph\cite{ApacheGiraph} is a popular open-source implementation of
+Pregel\cite{Malewicz:2010:PSL:1807167.1807184}. Giraph runs on Hadoop MapReduce and uses 
+Map-only jobs to schedule and coordinate the 
 vertex-centric workers and uses HDFS for storing and accessing graph datasets. 
-It is developed in Java and has a large community of developers and 
-users such as Facebook\cite{GiraphAtFacebook}. 
-Giraph has a faster input loading time compared to Pregel 
+It is developed in Java and has a large community of developers and users such as 
+Facebook\cite{GiraphAtFacebook}. Giraph has a faster input loading time compared to Pregel 
 because of using byte array for graph storage. On the other hand, this method 
 is not efficient for graph mutations, which lead to decentralized edges when removing an edge. 
 Giraph inherits the benefits and deficiencies of the Pregel vertex-centric
-programming model. Its performance and scalability is algorithm and graph dependent, 
-and works very fast, e.g., on stationary algorithms like PageRank but not as fast on 
-traversal algorithms like single source shortest path (SSSP) (Roy 2014) and 
-WCCs 
-(Salihoglu and Widom 2014), particularly for graphs with a large diameter. 
-However, the ease of use of this framework and the community support has made it a 
-popular platform over which to develop other Pregel-like systems with feature enhancements 
-to the vertex-centric concept.
+programming model. We picked Giraph for the supposed ease of use of this framework and the 
+community support. 
 
-\subsection{Challenges for Beginner Giraph Users}
+We ran Giraph on a 4-node hadoop cluster. Each of these nodes are t2.xlarge AWS machines
+each with 4 vCPUs, 16 GB Memory, 32 GB SSD and upto 1 Gbps Network. Giraph workers run 
+as Map jobs, each in their YARN containers. YARN allows setting limits on the number of cores 
+and memory to each container, so we limit each giraph worker to 1 vcore and 2 GB memory - so 
+we could run a maximum of around 20 giraph workers given our cluster capacity. 
+We chose PageRank as our graph algorithm since it is global and involves computation at all the vertices 
+and  edges in every iteration. We ran five iterations of PageRank (called SuperSteps) on each 
+graph, with the two partitioners that we implemented in Giraph  using \textit{HashPartitionerFactory} 
+and \textit{SimpleLongRangePartitionerFactory} classes. The CPU usage on all the machines 
+from a sample run of Giraph using round-robin partitioning on Facebook's Darwini graphs 
+is shown in Figure \ref{fig:sample_giraph_run}.
 
-A significant amount of the time spent on this project was spent setting up our 
-cluster and installing Giraph and all of its dependencies. Even for a 
-well-supported and widely used piece of software like Giraph, this was a time 
-consuming challenge. To begin with, version mismatches of Java, HDFS, Ubuntu, 
-and Giraph itself caused a number of difficult-to-debug errors. For example, 
-installing the most recent version of Java caused a mysterious build error that 
-took hours to track down a workaround for (the workaround being to downgrade 
-Java). Additionally, once Giraph had been successfully built, a total of eight 
-hours was spent tuning various settings before the example job provided in the 
-documentation would run without error. This was due to a number of factors. 
-First, configuration settings are scattered across many different files, making 
-it challenging to identify the source of a problem and difficult to predict how 
-the settings would interact with each other. Second, few facilities existed for 
-fine-tuning resource allocation. Many jobs failed with ``out of memory'' 
-exceptions because it was difficult to tune the amount of memory they would be 
-allocated. Third, error messages are not gathered in a central location - the 
-existence of numerous log files made tracking down errors time consuming. 
-Finally, Giraph seems to be a highly sensitive and delicate system. 
-Unfortunately, as a result it is fragile: the slightest misallocation or 
-imbalance of a resource causes jobs to fail with little explanation.
+\begin{figure}
+	\centering
+	\includegraphics[width=\columnwidth]{./samplerun.png}
+    \caption{CPU usage on all the nodes from a sample PageRank run over time. The five spikes 
+        indicate five iterations of the algorithm.}
+	\label{fig:sample_giraph_run}
+\end{figure}
 
-Our conclusion was that Giraph is a tool that is best used for large, 
-heavy-duty workloads. For simple graph processing, one machine and writing 
-one's own graph processing code may be the more straightforward solution. It 
-seems likely that Giraph is in fact optimized for such workloads, given the 
-difficulty we experienced in trying to make Giraph use ``small'' input graphs 
-(less than a million 
-nodes).
+A significant amount of the time spent on this project was spent setting up our cluster and installing 
+Giraph and all of its dependencies. Even for a well-supported and widely used piece of software like 
+Giraph, this was a time consuming challenge. To begin with, version mismatches of Java, HDFS, Ubuntu, 
+and Giraph itself caused a number of difficult-to-debug errors. For example, installing the most recent 
+version of Java caused a mysterious build error that took hours to track down a workaround for (the workaround 
+being to downgrade Java). Additionally, once Giraph had been successfully built, we spent eight 
+hours tuning various settings before the example job provided in the documentation would run without error. 
+This was due to a number of factors. First, configuration settings are scattered across many different files, 
+making it challenging to identify the source of a problem and difficult to predict how the settings would interact 
+with each other. Second, few facilities existed for fine-tuning resource allocation. Many jobs failed with 
+``out of memory'' exceptions because it was difficult to tune the amount of memory they would be 
+allocated. Third, error messages are not gathered in a central location - the existence of numerous log files made 
+tracking down errors time consuming. Finally, Giraph seems to be a highly sensitive and delicate system. 
+Unfortunately, as a result it is fragile: the slightest misallocation or imbalance of a resource causes jobs to 
+fail with little explanation.
+
+Given limited total memory capacity of our cluster (4*16 GB), we could only run medium sized graphs 
+(with around 100 million edges) as Giraph does everything in memory. We ran PageRank on each of the graphs 
+we discussed in previous section with both round-robin and range partitioners while varying the number of 
+giraph workers (each with 2 GB memory) from 2 to 20. The execution times (excluding any preprocessing time) 
+for these graphs using different partitioners are shown in Figures 
+\ref{fig:giraph_roundrobin} and 
+\ref{fig:giraph_range}. The missing data points for few input graphs at 2, 4 and 6 workers is due to the fact 
+that these graphs are too big and cannot be run with fewer workers. 
+
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\columnwidth]{./giraph_roundrobin.png}
+    \caption{PageRank computation time for various graphs on Giraph with RoundRobin vertex partitioner
+        as number of workers (partitions) are increased.}
+	\label{fig:giraph_roundrobin}
+\end{figure}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\columnwidth]{./giraph_range.png}
+    \caption{PageRank computation time for various graphs on Giraph with Range vertex partitioner
+    as number of workers (partitions) are increased.}
+	\label{fig:giraph_range}
+\end{figure}
+
+In both cases, we expected the computational time to go down as the number of workers increased, 
+which only happened with the range partitioner. Computation times for range partitioner are less 
+compared to round-robin partitioner for every graph, which seems to indicate that network overhead 
+affects the performance more than straggler problems caused by the imbalance in partitioning.
+In general, we didn't see the results we were expecting. Our conclusion was that Giraph has a 
+lot of setup and preprocessing overheads that adds a lot of 
+noise that significantly affects our runs since we use medium sized graphs that take only few seconds 
+to run. We believe that 
+using much larger graphs (like Twitter or Facebook) would give us the results that could let us 
+clearly draw conclusions, but we could not run them due to resource limitations. We leave that to 
+future work.

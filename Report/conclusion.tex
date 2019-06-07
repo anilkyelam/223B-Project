@@ -1,10 +1,12 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-We present a small study on the effects of partitioning algorithms on 
+We present a study on the effects of partitioning algorithms on 
 performance predictors (such as the distribution of edges on workers) and 
 performance itself on Apache Giraph. We conclude that a tradeoff exists between 
 reducing the number of messages that must be sent over the network and 
 equalizing the number of edges that are distributed to each node: to optimize 
 the former, range partitioning should be used, and to optimize the latter, 
-modulo partitioning is best. 
+modulo partitioning is best. However, in real-world scenarios, the partitioning 
+choice matters less because its effects are masked by the overhead of setup 
+that Giraph has to do.

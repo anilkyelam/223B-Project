@@ -111,8 +111,8 @@ experiments_filter = [
     # "Run-2019-06-03-16-28-35"           # enwiki 10 runs each
     # "Run-2019-06-03-19-42-19"           # enwiki two partitioners, from 4 to 20 workers
     # "Run-2019-06-03-22-36-42"           # hollywood two partitioners, from 10 to 20 workers
-    # "Run-2019-06-04-17-17-37", "Run-2019-06-04-22-11-38",           # All graphs, two partitioners, from 2 to 18 workers
-    "Run-2019-06-05-15-12-48"
+    "Run-2019-06-04-17-17-37", "Run-2019-06-04-22-11-38",           # All graphs, two partitioners, from 2 to 18 workers
+    # "Run-2019-06-05-15-12-48"
 ]
 link_rates_filter = [0]
 
@@ -143,6 +143,24 @@ def print_stats(exp_metrics):
         else:
             print("{:<40s} {:<20s} {:2d} {:<5s}".format(exp_setup.input_graph_file, str(exp_setup.partitioner), exp_setup.num_workers, "Failed"))
         pass
+
+    # Round-robin partitioner
+    hash_prtn_runs = [e for e in exp_metrics if e.experiment_setup.partitioner == "Hash" and e.is_success]
+    for partitioner in ["Hash", "SimpleLongRange"]:
+        prtn_runs = [e for e in exp_metrics if e.experiment_setup.partitioner == partitioner and e.is_success]
+        input_graphs = set([e.experiment_setup.input_graph_file for e in prtn_runs])
+        
+        fig, ax = plt.subplots(1, 1)
+        for input_graph in input_graphs:
+            workers = [e.experiment_setup.num_workers for e in prtn_runs if e.experiment_setup.input_graph_file == input_graph]
+            exec_times_sec = [e.time_sstep_total_ms/1000 for e in prtn_runs if e.experiment_setup.input_graph_file == input_graph]
+            ax.set_ylabel("Computation time (secs)")
+            ax.set_xlabel("Number of workers")
+            ax.plot(workers, exec_times_sec, label=input_graph.replace(".graph-txt",""), marker="x")
+
+        plt.legend()
+        plt.savefig("giraph_{0}.png".format(partitioner))
+
 
     # exp_confs = sorted(set([(e.experiment_setup.input_graph_file, e.experiment_setup.partitioner, e.experiment_setup.num_workers) for e in exp_metrics]))
     # for exp_conf in exp_confs:

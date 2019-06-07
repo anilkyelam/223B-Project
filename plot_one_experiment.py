@@ -286,9 +286,9 @@ def plot_all_for_one_label(plots_dir_full_path, all_readings, experiment_id, exp
     all_readings = list(filter(lambda r: r[2] == label_name, all_readings))
 
     fig, ax = plt.subplots(1, 1)
-    fig.set_size_inches(w=20,h=10)
-    fig.suptitle("Experiment ID: {0}\nPageRank on graph:{1}, Link bandwidth: {2}Mbps, Label: {3}".format(
-        experiment_id, experiment_setup.input_graph_file, experiment_setup.link_bandwidth_mbps, label_name))
+    fig.set_size_inches(w=6,h=4)
+    # fig.suptitle("Experiment ID: {0}\nPageRank on graph:{1}, Link bandwidth: {2}Mbps, Label: {3}".format(
+        # experiment_id, experiment_setup.input_graph_file, experiment_setup.link_bandwidth_mbps, label_name))
 
     # render subplots
     for node_name in experiment_setup.hdfs_nodes:
