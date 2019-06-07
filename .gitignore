@@ -2,6 +2,9 @@
 Results/
 results/
 
+# Ignore paper.pdf
+*/paper.pdf
+
 # Ignore private key files
 *.pem
 
