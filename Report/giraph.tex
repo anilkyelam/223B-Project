@@ -24,3 +24,40 @@ to the vertex-centric concept.
 Why pagerank?
 Needs to be global, traversing the whole graph. Examples include page rank and connected
 components, degree distribution.
+
+\subsection{Setting up Giraph}
+1. Look at all the settings file and decribe important settings 
+
+
+\subsubsection{Challenges for Beginner Giraph Users}
+
+A significant amount of the time spent on this project was spent setting up our 
+cluster and installing Giraph and all of its dependencies. Even for a 
+well-supported and widely used piece of software like Giraph, this was a time 
+consuming challenge. To begin with, version mismatches of Java, HDFS, Ubuntu, 
+and Giraph itself caused a number of difficult-to-debug errors. For example, 
+installing the most recent version of Java caused a mysterious build error that 
+took hours to track down a workaround for (the workaround being to downgrade 
+Java). Additionally, once Giraph had been successfully built, a total of eight 
+hours was spent tuning various settings before the example job provided in the 
+documentation would run without error. This was due to a number of factors. 
+First, configuration settings are scattered across many different files, making 
+it challenging to identify the source of a problem and difficult to predict how 
+the settings would interact with each other. Second, few facilities existed for 
+fine-tuning resource allocation. Many jobs failed with ``out of memory'' 
+exceptions because it was difficult to tune the amount of memory they would be 
+allocated. Third, error messages are not gathered in a central location - the 
+existence of numerous log files made tracking down errors time consuming. 
+Finally, Giraph seems to be a highly sensitive and delicate system. 
+Unfortunately, as a result it is fragile: the slightest misallocation or 
+imbalance of a resource causes jobs to fail with little explanation.
+
+Our conclusion was that Giraph is a tool that is best used for large, 
+heavy-duty workloads. For simple graph processing, one machine and writing 
+one's own graph processing code may be the more straightforward solution. It 
+seems likely that Giraph is in fact optimized for such workloads, given the 
+difficulty we experienced in trying to make Giraph use ``small'' input graphs 
+(less than a million 
+nodes).
+
+\subsection{Effect of different partition schemes}
