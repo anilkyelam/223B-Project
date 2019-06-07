@@ -28,10 +28,11 @@ on the partitioning is provided in the following section.
 
 
 Instead of implementing distributed page rank from scratch, we decided to pick a one 
-of the many graph processing frameworks available in the wild. We pickled giraph\cite{giraph}
+of the many graph processing frameworks available in the wild. We pickled giraph
+\cite{ApacheGiraph}
 for these reasons: very much in use, open sourced, matches much of the design choices we 
 picked in the first paragraph, seen many recent optimizations from facebook
-\cite{Ching:2015:OTE:2824032.2824077}, easier to plug in the partitioners, and more?
+\cite{GiraphAtFacebook}, easier to plug in the partitioners, and more?
 Downside: takes too much time and tuning to setup, only allows vertex partitioning, and more?
 
 

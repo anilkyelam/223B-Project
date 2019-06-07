@@ -30,6 +30,8 @@ class ExperimentSetup:
         self.experiment_group_desc = json_dict["ExperimentGroupDesc"]
         self.giraph_class_name = json_dict["GiraphClassName"]
         self.input_cached_in_hdfs = json_dict["InputHdfsCached"] if "InputHdfsCached" in json_dict else None
+        self.num_workers = int(json_dict["NumberOfWorkers"]) if "NumberOfWorkers" in json_dict else None
+        self.partitioner = json_dict["Partitioner"] if "Partitioner" in json_dict else None
 
 
 # Results base folder
@@ -41,7 +43,7 @@ mem_readings_file_name = "memory.sar"
 net_readings_file_name = "network.sar"
 diskio_readings_file_name = "diskio.sar"
 power_readings_file_name = "power_readings.txt"
-spark_log_file_name = 'spark.log'
+giraph_log_file_name = 'giraph.log'
 
 
 # Regex patterns. https://regex101.com/
