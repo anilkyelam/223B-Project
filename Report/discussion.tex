@@ -1,39 +1,52 @@
 \section{Discussion}
 \label{sec:discussion}
 
-Here goes the discussion on what choices we made for our implementation w.r.t 
-all the choices we discussed in the previous section. We will go with global
-algorithm like pagerank, on input graphs with uniform vertex and edge 
-distribution to start with. We will go with synchronous model inspite of some
-performance disadvantages as it makes programming easier and is widely used. 
-Since the kind of paritioning (vertex centric, edge centric or graph centric) 
-should not matter that much for very uniform graphs, we will start with the most 
-popular one i.e., vertex centric model. Choosing uniform graphs should help 
-alleviate the skewed straggler problems affecting the synchronous model as well.
-We will go with static partitioning since page rank keeps all the vertices active
-throughout the run. \\
+Of the features of graph processing frameworks discussed in the last section,
+input partitioning seems like the one that effects the performance significanlty 
+- so we decided to focus on that in this paper. As we limit ourselves to vertex-centric models, 
+we only focus on vertex partitioning methods. There are two potential ways in which the 
+partitioning affects performance:
+\begin{itemize}
+    \item \textbf{The distribution of edges across partitions} Given that the computational complexity 
+    of most graph algorithms is on the order of number of edges, the share of each worker in the 
+    computation depends on number of edges its partition has. In order to avoid stragglers 
+    (especially for synchronous coordination frameworks like Giraph), the partitioning scheme
+    should distribute the edges evenly and try to minimize the variation in the number of edges 
+    across partitions.
+    \item \textbf{The fraction of inter-partition edges} As vertex partitioning puts vertices
+    in different partitions, a lot of edges may end up with their vertices in different 
+    partitions - we call these inter-partition edges. As graph algorithms work by sending 
+    messages over edges, messages sent over these inter-partition edges need to be sent across network
+    and add to a lot of performance overhead. A good partitioning scheme tries to minimize the 
+    number of inter-partition edges. Finding such an optimal partitioning is an NP-complete problem, 
+    so we can only go with heuristics.
+\end{itemize}
 
-Then we do a theoretical analysis on the kind of network performance we could 
-get. Given nodes of CPU c, memory m and network n for an input graph g = (v, e)
-what would a perfectly written distributed page rank program with above 
-characteristics give us in terms of network performance? \\
+The partitioning heuristics can be as simple as hash-based ones that hash vertices into buckers 
+without regard to their connectivity or complex ones that try to reduce the edge cuts across partitions 
+\cite{Salihoglu1} that comes at added computational overhead of partitioning itself. Our intial goal 
+was to implement a mix of simple and complex partitioning heuristics and evaluate the tradeoff between
+performance benefits of good partitioning versus the overhead of partitioning itself. However, due to 
+limited time and the complexity of implementing these heuristics on Apache Giraph, we restricted 
+ourselves to evaluating two simple yet very different partitioning schemes that does not incur any 
+computational overhead:
+\begin{itemize}
+    \item \textbf{Round-robin Partitioning} In this method of partitioning, we assign each vertex to 
+    partition on a round-robin basis (we use modulo operator on vertex id to acheive this). The idea 
+    is that for a graph with vertices indexed according to certain traversal algorithm, each partition 
+    would get vertices from all over the graph in a uniform way.
+    \item \textbf{Range Partitioning} In this one, we divide the vertex index space into equal ranges
+    (number of ranges being number of partitions required) and vertices from each range is assigned to 
+    each partition. This partitioning roughly divides the graph spatially and so partitions will exhibit 
+    better locality.
+\end{itemize}
 
+Since these partitioning methods are straight-forward, we first perform a theoretical analysis of our 
+input graphs to see the distribution of edges in and across partitions, which is presented in the 
+next section. Later, we run PageRank 
+algorithm on these graphs using Giraph and analyze the running times to see if our observations 
+hold in practice.
 
-Argue that while all of the design choices we discussed in background and in the 
-first paragraph affects how balanced the resource usage of the run is going to be,
-the thing that seems to matter significantly is how input graph is partitioned. For 
-the purposes of this project, we will look at how partitioning choices will affect
-the resource usage balance of a graph algorithm, particularly pagerank. More details
-on the partitioning is provided in the following section.
-
-
-Instead of implementing distributed page rank from scratch, we decided to pick a one 
-of the many graph processing frameworks available in the wild. We pickled giraph
-\cite{ApacheGiraph}
-for these reasons: very much in use, open sourced, matches much of the design choices we 
-picked in the first paragraph, seen many recent optimizations from facebook
-\cite{GiraphAtFacebook}, easier to plug in the partitioners, and more?
-Downside: takes too much time and tuning to setup, only allows vertex partitioning, and more?
 
 
 
